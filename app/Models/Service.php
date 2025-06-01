@@ -39,4 +39,12 @@ class Service extends Model implements HasMedia
         $this->addMediaConversion('thumb')->fit('crop', 50, 50);
         $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
+
+    public function getColorClass($num)
+    {
+
+        $formatter = new \NumberFormatter("en", \NumberFormatter::SPELLOUT);
+        $value = ucfirst($formatter->format($num));
+        return 'color' . ($value);
+    }
 }

@@ -25,7 +25,7 @@ class CreateSettingsTable extends Migration
             $table->longText('description')->nullable();
             $table->longText('about_description')->nullable();
             $table->string('donation_url')->nullable();
-            $table->string('chairman_description')->nullable();
+            $table->longText('chairman_description')->nullable();
             $table->string('counter_1_text')->nullable();
             $table->integer('counter_1_value')->nullable();
             $table->string('counter_2_text')->nullable();

@@ -196,8 +196,7 @@
     },
     params: {
       size: 40,
-      width: 4096,
-      height: 4096
+       
     },
     success: function (file, response) {
       $('form').find('input[name="image"]').remove()
@@ -251,8 +250,7 @@
     },
     params: {
       size: 2,
-      width: 4096,
-      height: 4096
+       
     },
     success: function (file, response) {
       $('form').find('input[name="inner_image"]').remove()

@@ -29,9 +29,9 @@
         <div class="row">
             @foreach ($services as $service)
                 <div class="col-md-3">
-                    <div class="h-serv colorOne">
+                    <div class="h-serv {{$service->getColorClass($loop->index+1)}}">
                         <h5>{{ $service->name }}</h5>
-                        <p>{{ $service->description }}</p>
+                        <p>{!! $service->description !!}</p>
 
                     </div>
                     <div class="backserv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -178,7 +178,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<img src="{{('frontend/assets/images/logoIcon.png')}}" width="50" />
+					<img src="{{asset('frontend/assets/images/logoIcon.png')}}" width="50" />
 					<div class="charina-section-title text-center pb-50">
 
 						<h4> أخبار عيون جدة </h4>
