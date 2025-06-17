@@ -46,19 +46,6 @@
                 <span class="help-block">{{ trans('cruds.reportMoney.fields.link_helper') }}</span>
             </div>
             <div class="form-group">
-                <div class="form-check {{ $errors->has('published') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="published" value="0">
-                    <input class="form-check-input" type="checkbox" name="published" id="published" value="1" {{ $reportMoney->published || old('published', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="published">{{ trans('cruds.reportMoney.fields.published') }}</label>
-                </div>
-                @if($errors->has('published'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('published') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.reportMoney.fields.published_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label class="required" for="file">{{ trans('cruds.reportMoney.fields.file') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('file') ? 'is-invalid' : '' }}" id="file-dropzone">
                 </div>

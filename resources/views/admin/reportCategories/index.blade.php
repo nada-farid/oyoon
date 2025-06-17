@@ -31,9 +31,6 @@
                         {{ trans('cruds.reportCategory.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.reportCategory.fields.published') }}
-                    </th>
-                    <th>
                         &nbsp;
                     </th>
                 </tr>
@@ -92,7 +89,6 @@
 { data: 'id', name: 'id' },
 { data: 'type', name: 'type' },
 { data: 'name', name: 'name' },
-{ data: 'published', name: 'published' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,

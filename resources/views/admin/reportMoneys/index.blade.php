@@ -34,9 +34,6 @@
                         {{ trans('cruds.reportMoney.fields.link') }}
                     </th>
                     <th>
-                        {{ trans('cruds.reportMoney.fields.published') }}
-                    </th>
-                    <th>
                         {{ trans('cruds.reportMoney.fields.file') }}
                     </th>
                     <th>
@@ -99,7 +96,6 @@
 { data: 'part', name: 'part' },
 { data: 'year', name: 'year' },
 { data: 'link', name: 'link' },
-{ data: 'published', name: 'published' },
 { data: 'file', name: 'file', sortable: false, searchable: false },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],

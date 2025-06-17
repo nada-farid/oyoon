@@ -52,14 +52,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.hawkma.fields.published') }}
-                        </th>
-                        <td>
-                            <input type="checkbox" disabled="disabled" {{ $hawkma->published ? 'checked' : '' }}>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.hawkma.fields.category') }}
                         </th>
                         <td>

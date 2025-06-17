@@ -34,14 +34,6 @@
                             {{ $reportCategory->name }}
                         </td>
                     </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.reportCategory.fields.published') }}
-                        </th>
-                        <td>
-                            <input type="checkbox" disabled="disabled" {{ $reportCategory->published ? 'checked' : '' }}>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

@@ -8,33 +8,35 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="56x56" href="{{asset('frontend/assets/images/fav-icon/icon.png')}}">
+    <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('frontend/assets/images/fav-icon/icon.png') }}">
     <!-- bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}" type="text/css" media="all" />
     <!-- carousel CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.carousel.min.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.min.css') }}" type="text/css"
+        media="all" />
     <!-- animate CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.css') }}" type="text/css" media="all" />
     <!-- animated-text CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/animated-text.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animated-text.css') }}" type="text/css" media="all" />
     <!-- font-awesome CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/all.min.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/all.min.css') }}" type="text/css" media="all" />
     <!-- font-flaticon CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/flaticon.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/flaticon.css') }}" type="text/css" media="all" />
     <!-- theme-default CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/theme-default.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/theme-default.css') }}" type="text/css" media="all" />
     <!-- meanmenu CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/meanmenu.min.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/meanmenu.min.css') }}" type="text/css" media="all" />
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" type="text/css" media="all" />
     <!-- transitions CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.transitions.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.transitions.css') }}" type="text/css"
+        media="all" />
     <!-- venobox CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/venobox/venobox.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/venobox/venobox.css') }}" type="text/css" media="all" />
     <!-- responsive CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}" type="text/css" media="all" />
     <!-- modernizr js -->
-    <script src="{{asset('frontend/assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/02c22aec7b.js" crossorigin="anonymous"></script>
@@ -43,8 +45,8 @@
     <!----slider---->
     <script src="https://code.jquery.com/jquery.js"></script>
 
-    <script src="{{asset('frontend/src/skdslider.min.js')}}"></script>
-    <link href="{{asset('frontend/src/skdslider.css')}}" rel="stylesheet">
+    <script src="{{ asset('frontend/src/skdslider.min.js') }}"></script>
+    <link href="{{ asset('frontend/src/skdslider.css') }}" rel="stylesheet">
     <script type="text/javascript">
         jQuery(document).ready(function() {
             jQuery('#demo1').skdslider({
@@ -79,6 +81,31 @@
         });
     </script>
     <!----menu---->
+    <style>
+        .invalid-feedback {
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: #dc3545;
+        }
+
+        .is-invalid~.invalid-feedback,
+        .is-invalid~.invalid-tooltip,
+        .was-validated :invalid~.invalid-feedback,
+        .was-validated :invalid~.invalid-tooltip {
+            display: block;
+        }
+
+        .form-control.is-invalid,
+        .was-validated .form-control:invalid {
+            border-color: #dc3545;
+            padding-right: calc(1.5em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+    </style>
     @yield('style')
 </head>
 
@@ -101,9 +128,10 @@
                 <div class="col-md-6 ">
                     <div class="header-links">
                         <ul>
-                            <li><span><i class="fa-solid fa-phone"></i></span> <a href="#">{{$setting->phone}}</a></li>
+                            <li><span><i class="fa-solid fa-phone"></i></span> <a
+                                    href="#">{{ $setting->phone }}</a></li>
                             <li><span><i class="fa-solid fa-envelope"></i></span> <a
-                                    href="#">{{$setting->email}}</a></li>
+                                    href="#">{{ $setting->email }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -130,8 +158,8 @@
 
 
                 <div class="logo">
-                    <a class="logo_img" href="{{route('frontend.home')}}" title="">
-                        <img src="{{$setting->getFirstMediaUrl('logo')}}" alt="" />
+                    <a class="logo_img" href="{{ route('frontend.home') }}" title="">
+                        <img src="{{ $setting->getFirstMediaUrl('logo') }}" alt="" />
                     </a>
 
                 </div>
@@ -142,12 +170,12 @@
                             <li>
                                 <a href="#">عن الجمعية <span><i class="bi bi-chevron-down"></i></span></a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{route('frontend.about')}}">عن الجمعية</a></li>
-                                    <li><a href="{{route('frontend.chairman')}}">كلمة رئيس مجلس الإدارة</a></li>
-                                    <li><a href="{{route('frontend.directors')}}">مجلس الإدارة</a></li>
-                                    <li><a href="{{route('frontend.partners')}}">شركاؤنا</a></li>
-                                    <li><a href="{{route('frontend.scope')}}">نطاق الجمعية </a></li>
-                                    <li><a href="{{route('frontend.certificates')}}">الشهادات </a></li>
+                                    <li><a href="{{ route('frontend.about') }}">عن الجمعية</a></li>
+                                    <li><a href="{{ route('frontend.chairman') }}">كلمة رئيس مجلس الإدارة</a></li>
+                                    <li><a href="{{ route('frontend.directors') }}">مجلس الإدارة</a></li>
+                                    <li><a href="{{ route('frontend.partners') }}">شركاؤنا</a></li>
+                                    <li><a href="{{ route('frontend.scope') }}">نطاق الجمعية </a></li>
+                                    <li><a href="{{ route('frontend.certificates') }}">الشهادات </a></li>
                                     {{-- <li><a  href="{{route('frontend.sustainability')}}"> مساهماتنا </a></li> --}}
 
                                 </ul>
@@ -156,11 +184,11 @@
                                 <a href="#">الحوكمة <span><i class="bi bi-chevron-down"></i></span></a>
                                 <ul class="sub-menu">
                                     @foreach ($hawkma_categories as $category)
-                                    <li>
-                                        <a href="{{ route('frontend.hawkma', $category) }}"><span>
-                                                {{ $category->name }}</span></a>
-                                    </li>
-                                @endforeach
+                                        <li>
+                                            <a href="{{ route('frontend.hawkma', $category) }}"><span>
+                                                    {{ $category->name }}</span></a>
+                                        </li>
+                                    @endforeach
 
                                 </ul>
                             </li>
@@ -181,31 +209,32 @@
                             <li>
                                 <a href="#">المركز الاعلامي <span><i class="bi bi-chevron-down"></i></span></a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{route('frontend.news')}}">الأخبار</a></li>
-                                    <li><a href="{{route('frontend.articles')}}">المقالات</a></li>
-                                    <li><a href="{{route('frontend.media')}}">الصور</a></li>
+                                    <li><a href="{{ route('frontend.news') }}">الأخبار</a></li>
+                                    <li><a href="{{ route('frontend.articles') }}">المقالات</a></li>
+                                    <li><a href="{{ route('frontend.media') }}">الصور</a></li>
 
                                 </ul>
                             </li>
-                            <li><a href="{{route('frontend.projects')}}"> مبادرتنا </a></li>
-                            <li><a href="{{route('frontend.support')}}"> لماذا تدعمنا؟ </a></li>
+                            <li><a href="{{ route('frontend.projects') }}"> مبادرتنا </a></li>
+                            <li><a href="{{ route('frontend.support') }}"> لماذا تدعمنا؟ </a></li>
                             <li>
                                 <a href="#"> العضويات <span><i class="bi bi-chevron-down"></i></span></a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{route('frontend.membership_types')}}">انواع العضويات</a></li>
-                                    <li><a href="{{route('frontend.membership_guides')}}">دليل التسجيل في العضوية</a></li>
-                                    <li><a href="{{route('frontend.membership')}}"> تسجيل العضوية</a></li>
+                                    <li><a href="{{ route('frontend.membership_types') }}">انواع العضويات</a></li>
+                                    <li><a href="{{ route('frontend.membership_guides') }}">دليل التسجيل في
+                                            العضوية</a></li>
+                                    <li><a href="{{ route('frontend.membership') }}"> تسجيل العضوية</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="{{route('frontend.contact')}}">التواصل</a></li>
+                            <li><a href="{{ route('frontend.contact') }}">التواصل</a></li>
                         </ul>
                     </nav>
                 </div>
 
 
                 <div class="header-button">
-                    <a href="{{$setting->donation_url}}"> تبرع الأن  <i class="bi bi-suit-heart"></i> </a>
+                    <a href="{{ $setting->donation_url }}"> تبرع الأن <i class="bi bi-suit-heart"></i> </a>
                 </div>
 
             </div>
@@ -215,8 +244,8 @@
     <!--  Mobile Menu Area -->
     <div class="mobile-menu-area   d-lg-none ">
         <div class="logo">
-            <a class="logo_img" href="{{route('frontend.home')}}" title="">
-                <img src="{{asset('frontend/assets/images/logo.png')}}" alt="" height="60" />
+            <a class="logo_img" href="{{ route('frontend.home') }}" title="">
+                <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="" height="60" />
             </a>
 
         </div>
@@ -228,12 +257,12 @@
                     <li>
                         <a href="#">عن الجمعية <span><i class="bi bi-chevron-down"></i></span></a>
                         <ul class="sub-menu">
-                            <li><a href="{{route('frontend.about')}}">عن الجمعية</a></li>
-                            <li><a href="{{route('frontend.chairman')}}">كلمة رئيس مجلس الإدارة</a></li>
-                            <li><a href="{{route('frontend.directors')}}">مجلس الإدارة</a></li>
-                            <li><a href="{{route('frontend.partners')}}">شركاؤنا</a></li>
-                            <li><a href="{{route('frontend.scope')}}">نطاق الجمعية </a></li>
-                            <li><a href="{{route('frontend.certificates')}}">الشهادات </a></li>
+                            <li><a href="{{ route('frontend.about') }}">عن الجمعية</a></li>
+                            <li><a href="{{ route('frontend.chairman') }}">كلمة رئيس مجلس الإدارة</a></li>
+                            <li><a href="{{ route('frontend.directors') }}">مجلس الإدارة</a></li>
+                            <li><a href="{{ route('frontend.partners') }}">شركاؤنا</a></li>
+                            <li><a href="{{ route('frontend.scope') }}">نطاق الجمعية </a></li>
+                            <li><a href="{{ route('frontend.certificates') }}">الشهادات </a></li>
 
                         </ul>
                     </li>
@@ -241,35 +270,35 @@
                         <a href="#">الحوكمة <span><i class="bi bi-chevron-down"></i></span></a>
                         <ul class="sub-menu">
                             @foreach ($hawkma_categories as $category)
-                            <li>
-                                <a href="{{ route('frontend.hawkma', $category) }}"><span>
-                                        {{ $category->name }}</span></a>
-                            </li>
-                        @endforeach
+                                <li>
+                                    <a href="{{ route('frontend.hawkma', $category) }}"><span>
+                                            {{ $category->name }}</span></a>
+                                </li>
+                            @endforeach
                         </ul>
                     </li>
 
                     <li>
                         <a href="#">المركز الاعلامي <span><i class="bi bi-chevron-down"></i></span></a>
                         <ul class="sub-menu">
-                            <li><a href="{{route('frontend.news')}}">الأخبار</a></li>
-                            <li><a href="{{route('frontend.articles')}}">المقالات</a></li>
+                            <li><a href="{{ route('frontend.news') }}">الأخبار</a></li>
+                            <li><a href="{{ route('frontend.articles') }}">المقالات</a></li>
                             <li><a href="media.html">الصور</a></li>
 
                         </ul>
                     </li>
                     <li><a href="initiative.html"> مبادرتنا </a></li>
-                    <li><a href="{{route('frontend.support')}}"> لماذا تدعمنا؟ </a></li>
+                    <li><a href="{{ route('frontend.support') }}"> لماذا تدعمنا؟ </a></li>
                     <li>
                         <a href="#"> العضويات <span><i class="bi bi-chevron-down"></i></span></a>
                         <ul class="sub-menu">
-                            <li><a href="{{route('frontend.membership_types')}}">انواع العضويات</a></li>
-                            <li><a href="{{route('frontend.membership_guides')}}">دليل التسجيل في العضوية</a></li>
-                            <li><a href="{{route('frontend.membership')}}"> تسجيل العضوية</a></li>
+                            <li><a href="{{ route('frontend.membership_types') }}">انواع العضويات</a></li>
+                            <li><a href="{{ route('frontend.membership_guides') }}">دليل التسجيل في العضوية</a></li>
+                            <li><a href="{{ route('frontend.membership') }}"> تسجيل العضوية</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="{{route('frontend.contact')}}">التواصل</a></li>
+                    <li><a href="{{ route('frontend.contact') }}">التواصل</a></li>
                 </ul>
             </nav>
         </div>
@@ -277,7 +306,7 @@
     <!--==================================================-->
     <!-- End Main Menu Area -->
     @yield('content')
-   
+
 
 
     <!-- Start  Footer Section -->
@@ -290,8 +319,8 @@
                     <div class="widgets-company-info">
                         <!-- charina logo -->
                         <div class="charina-logo">
-                            <a class="logo_img" href="{{route('frontend.home')}}" title="">
-                                <img src="{{asset('frontend/assets/images/logo-footer.png')}}" alt="" />
+                            <a class="logo_img" href="{{ route('frontend.home') }}" title="">
+                                <img src="{{ asset('frontend/assets/images/logo-footer.png') }}" alt="" />
                             </a>
                         </div>
 
@@ -304,12 +333,18 @@
                         <h4 class="widget-title">روابط سريعة </h4>
                         <div class="menu-quick-link-content">
                             <ul class="footer-widget-list">
-                                 <li><a href="{{route('frontend.contact')}}"> <i class="bi bi-chevron-double-left"></i>التواصل</a></li>
-                                 <li><a href="{{route('frontend.directors')}}"><i class="bi bi-chevron-double-left"></i>مجلس الإدارة</a></li>
-                                <li><a href="{{$setting->donation_url}}"> <i class="bi bi-chevron-double-left"></i> تبرع معنا </a></li>
-                                <li><a href="{{route('frontend.membership')}}"> <i class="bi bi-chevron-double-left"></i> سجل عضويتك </a></li>
-                                <li><a href="{{route('frontend.news')}}" > <i class="bi bi-chevron-double-left"></i>الأخبار</a></li>
-                                <li><a href="{{route('frontend.articles')}}"><i class="bi bi-chevron-double-left"></i>المقالات</a></li>
+                                <li><a href="{{ route('frontend.contact') }}"> <i
+                                            class="bi bi-chevron-double-left"></i>التواصل</a></li>
+                                <li><a href="{{ route('frontend.directors') }}"><i
+                                            class="bi bi-chevron-double-left"></i>مجلس الإدارة</a></li>
+                                <li><a href="{{ $setting->donation_url }}"> <i class="bi bi-chevron-double-left"></i>
+                                        تبرع معنا </a></li>
+                                <li><a href="{{ route('frontend.membership') }}"> <i
+                                            class="bi bi-chevron-double-left"></i> سجل عضويتك </a></li>
+                                <li><a href="{{ route('frontend.news') }}"> <i
+                                            class="bi bi-chevron-double-left"></i>الأخبار</a></li>
+                                <li><a href="{{ route('frontend.articles') }}"><i
+                                            class="bi bi-chevron-double-left"></i>المقالات</a></li>
                             </ul>
                         </div>
                     </div>
@@ -324,14 +359,14 @@
                             <!-- footer info desc -->
                             <div class="footer-info-desc">
                                 <div class="icon"><i class="fa-solid fa-mobile"></i></div>
-                                <p> {{$setting->phone}} </p>
+                                <p> {{ $setting->phone }} </p>
 
                             </div>
 
                             <!-- footer info desc -->
                             <div class="footer-info-desc">
                                 <div class="icon"><i class="fa-solid fa-map"></i></div>
-                                <p> {{$setting->address}}</p>
+                                <p> {{ $setting->address }}</p>
 
                             </div>
 
@@ -339,7 +374,7 @@
                             <!-- footer info desc -->
                             <div class="footer-info-desc">
                                 <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                                <p> {{$setting->email}}</p>
+                                <p> {{ $setting->email }}</p>
 
                             </div>
 
@@ -356,10 +391,10 @@
 
                 <!-- foter shape -->
                 <div class="footer-shape bounce-animate">
-                    <img src="{{asset('frontend/assets/images/resource/footer-arrow.png')}}" alt="">
+                    <img src="{{ asset('frontend/assets/images/resource/footer-arrow.png') }}" alt="">
                 </div>
                 <div class="footer-shape2 dance">
-                    <img src="{{asset('frontend/assets/images/resource/heart-icon.png')}}" alt="">
+                    <img src="{{ asset('frontend/assets/images/resource/heart-icon.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -411,37 +446,37 @@
     <!-- Start Search Popup Area -->
     <!--==================================================-->
     <!-- jquery js --
- <script src="{{asset('frontend/assets/js/vendor/jquery-3.2.1.min.js')}}"></script>
+ <script src="{{ asset('frontend/assets/js/vendor/jquery-3.2.1.min.js') }}"></script>
  <!-- bootstrap js -->
-    <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
     <!-- carousel js -->
-    <script src="{{asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/owl.carousel.min.js') }}"></script>
     <!-- counterup js -->
-    <script src="{{asset('frontend/assets/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.counterup.min.js') }}"></script>
     <!-- waypoints js -->
-    <script src="{{asset('frontend/assets/js/waypoints.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/waypoints.min.js') }}"></script>
     <!-- wow js -->
-    <script src="{{asset('frontend/assets/js/wow.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/wow.js') }}"></script>
     <!-- imagesloaded js -->
-    <script src="{{asset('frontend/assets/js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/imagesloaded.pkgd.min.js') }}"></script>
     <!-- venobox js -->
-    <script src="{{asset('frontend/venobox/venobox.js')}}"></script>
+    <script src="{{ asset('frontend/venobox/venobox.js') }}"></script>
     <!-- ajax mail js -->
-    <script src="{{asset('frontend/assets/js/ajax-mail.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/ajax-mail.js') }}"></script>
     <!--  animated-text js -->
-    <script src="{{asset('frontend/assets/js/animated-text.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/animated-text.js') }}"></script>
     <!-- venobox min js -->
-    <script src="{{asset('frontend/venobox/venobox.min.js')}}"></script>
+    <script src="{{ asset('frontend/venobox/venobox.min.js') }}"></script>
     <!-- isotope js -->
-    <script src="{{asset('frontend/assets/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/isotope.pkgd.min.js') }}"></script>
     <!-- jquery meanmenu js -->
-    <script src="{{asset('frontend/assets/js/jquery.meanmenu.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.meanmenu.js') }}"></script>
     <!-- jquery scrollup js -->
-    <script src="{{asset('frontend/assets/js/jquery.scrollUp.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.scrollUp.js') }}"></script>
     <!-- barfiller js -->
-    <script src="{{asset('frontend/assets/js/jquery.barfiller.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.barfiller.js') }}"></script>
     <!-- theme js -->
-    <script src="{{asset('frontend/assets/js/theme.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/theme.js') }}"></script>
 
     <!----slider---->
     <script>
