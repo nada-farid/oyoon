@@ -29,9 +29,15 @@ class UpdateContactRequest extends FormRequest
                 'nullable',
             ],
             'phone_number' => [
-                'string',
-                'nullable',
+                'required',
+                'regex:/^05\d{8}$/',
             ],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'phone_number.regex' => 'رقم الجوال يجب ان يكون 10 أرقام ويبدأ ب 05',
         ];
     }
 }

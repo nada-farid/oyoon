@@ -44,14 +44,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.reportMoney.fields.published') }}
-                        </th>
-                        <td>
-                            <input type="checkbox" disabled="disabled" {{ $reportMoney->published ? 'checked' : '' }}>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.reportMoney.fields.file') }}
                         </th>
                         <td>

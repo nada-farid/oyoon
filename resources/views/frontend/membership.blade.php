@@ -30,24 +30,56 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="name" placeholder="الاسم بالكامل*">
+                                        <input type="text" name="name"
+                                            class=" {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text"
+                                            name="name" id="name" value="{{ old('name', '') }}"
+                                            placeholder="الاسم بالكامل*">
+                                        @if ($errors->has('name'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('name') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="email" placeholder="البريد الالكتروني">
+
+                                        <input type="text" name="email"
+                                            class=" {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text"
+                                            name="email" id="email" value="{{ old('email', '') }}"
+                                            placeholder="البريد الالكتروني">
+                                        @if ($errors->has('email'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('email') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="phone_number" placeholder="الجوال">
+                                        <input type="text" name="phone_number"
+                                            class="{{ $errors->has('phone_number') ? 'is-invalid' : '' }}" type="text"
+                                            name="phone_number" id="phone_number" value="{{ old('phone_number', '') }}"
+                                            required placeholder="الجوال">
+                                        @if ($errors->has('phone_number'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('phone_number') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
 
 
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="job" placeholder="المهنة">
+                                        <input type="text" placeholder="المهنة"
+                                            class="{{ $errors->has('job') ? 'is-invalid' : '' }}" name="job"
+                                            id="job" value="{{ old('job', '') }}">
+                                        @if ($errors->has('job'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('job') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 ">
@@ -60,8 +92,18 @@
 
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="identity_number" placeholder="رقم الهوية">
+
+                                        <input placeholder="رقم الهوية"
+                                            class="{{ $errors->has('identity_number') ? 'is-invalid' : '' }}"
+                                            type="text" name="identity_number" id="identity_number"
+                                            value="{{ old('identity_number', '') }}" required>
+                                        @if ($errors->has('identity_number'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('identity_number') }}
+                                            </div>
+                                        @endif
                                     </div>
+
                                 </div>
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">

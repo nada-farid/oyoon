@@ -37,9 +37,6 @@
                         {{ trans('cruds.report.fields.image') }}
                     </th>
                     <th>
-                        {{ trans('cruds.report.fields.published') }}
-                    </th>
-                    <th>
                         {{ trans('cruds.report.fields.category') }}
                     </th>
                     <th>
@@ -103,7 +100,6 @@
 { data: 'name', name: 'name' },
 { data: 'file', name: 'file', sortable: false, searchable: false },
 { data: 'image', name: 'image', sortable: false, searchable: false },
-{ data: 'published', name: 'published' },
 { data: 'category_type', name: 'category.type' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],

@@ -31,9 +31,6 @@
                         {{ trans('cruds.hawkma.fields.file') }}
                     </th>
                     <th>
-                        {{ trans('cruds.hawkma.fields.published') }}
-                    </th>
-                    <th>
                         {{ trans('cruds.hawkma.fields.category') }}
                     </th>
                     <th>
@@ -95,7 +92,6 @@
 { data: 'id', name: 'id' },
 { data: 'title', name: 'title' },
 { data: 'file', name: 'file', sortable: false, searchable: false },
-{ data: 'published', name: 'published' },
 { data: 'category_name', name: 'category.name' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],

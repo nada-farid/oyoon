@@ -68,14 +68,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.report.fields.published') }}
-                        </th>
-                        <td>
-                            <input type="checkbox" disabled="disabled" {{ $report->published ? 'checked' : '' }}>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.report.fields.category') }}
                         </th>
                         <td>

@@ -21,28 +21,53 @@
                 <div class="col-lg-12">
                     <!-- contact form box -->
                     <div class="contact-form-box">
-                        <form action="{{route('frontend.contact.store')}}" method="POST" id="dreamit-form">
+                        <form action="{{ route('frontend.contact.store') }}" method="POST" id="dreamit-form">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box">
-                                        <input type="text" name="name" placeholder="الاسم">
+                                        <input type="text" name="name"
+                                            class=" {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text"
+                                            name="name" id="name" value="{{ old('name', '') }}"
+                                            placeholder="الاسم بالكامل*">
+                                        @if ($errors->has('name'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('name') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box">
-                                        <input type="text"  name="email" placeholder="البريد الالكتروني">
+
+                                        <input type="text" name="email"
+                                            class=" {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text"
+                                            name="email" id="email" value="{{ old('email', '') }}"
+                                            placeholder="البريد الالكتروني">
+                                        @if ($errors->has('email'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('email') }}
+                                            </div>
+                                        @endif
                                     </div>
                                     <input type="hidden" name="type" value="contact" />
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box">
-                                        <input type="text"  name="subject" placeholder="الموضوع">
+                                        <input type="text" name="subject" placeholder="الموضوع">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box">
-                                        <input type="text" name="phone_number" placeholder="الجوال">
+                                        <input type="text" name="phone_number"
+                                            class="{{ $errors->has('phone_number') ? 'is-invalid' : '' }}" type="text"
+                                            name="phone_number" id="phone_number" value="{{ old('phone_number', '') }}"
+                                            required placeholder="الجوال">
+                                        @if ($errors->has('phone_number'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('phone_number') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -87,7 +112,7 @@
                         </div>
                         <div class="contacts-title">
                             <h5>الجوال</h5>
-                            <h6> {{$setting->phone}}  </h6>
+                            <h6> {{ $setting->phone }} </h6>
                         </div>
                     </div>
                 </div>
@@ -97,8 +122,8 @@
                             <i class="bi bi-telephone"></i>
                         </div>
                         <div class="contacts-title">
-                            <h5>البريد الاكتروني</h5>
-                            <h6>{{$setting->email}} </h6>
+                            <h5>البريد الألكتروني</h5>
+                            <h6>{{ $setting->email }} </h6>
                         </div>
                     </div>
                 </div>
@@ -109,7 +134,7 @@
                         </div>
                         <div class="contacts-title">
                             <h5>العنوان</h5>
-                            <h6> {{$setting->address}} </h6>
+                            <h6> {{ $setting->address }} </h6>
                         </div>
                     </div>
                 </div>

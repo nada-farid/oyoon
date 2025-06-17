@@ -11,7 +11,7 @@ class StoreVolunteerRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('volunteer_create');
+        return true;
     }
 
     public function rules()
@@ -25,13 +25,14 @@ class StoreVolunteerRequest extends FormRequest
                 'required',
             ],
             'phone' => [
-                'string',
                 'required',
+                'regex:/^05\d{8}$/',
             ],
             'identity' => [
-                'string',
                 'required',
+                'regex:/^1[0-9]{9}$/',
             ],
+
             'skills' => [
                 'required',
             ],
@@ -48,6 +49,14 @@ class StoreVolunteerRequest extends FormRequest
             'cv' => [
                 'required',
             ],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'phone.regex' => 'رقم الجوال يجب ان يكون 10 أرقام ويبدأ ب 05',
+            'identity.regex' => 'رقم الهوية يجب ان يكون 10 أرقام ويبدأ ب 1',
         ];
     }
 }

@@ -29,19 +29,12 @@ class StoreMemberRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'phone_number' => [
-                'string',
-                'required',
-            ],
+         
             'email' => [
                 'string',
                 'required',
             ],
-            'identity_number' => [
-                'string',
-                'max:10',
-                'required',
-            ],
+           
             'identity_date' => [
                 'required',
                 'date_format:' . config('panel.date_format'),
@@ -66,6 +59,21 @@ class StoreMemberRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+              'phone_number' => [
+                'required',
+                'regex:/^05\d{8}$/',
+            ],
+            'identity_number' => [
+                'required',
+                'regex:/^1[0-9]{9}$/',
+            ],
+        ];
+    }
+     public function messages()
+    {
+        return [
+            'phone_number.regex' => 'رقم الجوال يجب ان يكون 10 أرقام ويبدأ ب 05',
+            'identity_number.regex' => 'رقم الهوية يجب ان يكون 10 أرقام ويبدأ ب 1',
         ];
     }
 }
