@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="{{ $settings3['column_class'] }}">
-                            <div class="card text-white btn-info">
+                            <div class="card text-white btn-primary">
                                 <div class="card-body pb-0">
                                     <div class="text-value">{{ number_format($settings3['total_number']) }}</div>
                                     <div>{{ $settings3['chart_title'] }}</div>
