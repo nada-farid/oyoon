@@ -1,0 +1,75 @@
+[27-Apr-2025 10:27:45 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:27:45 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:27:46 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:27:46 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:15 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:15 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:16 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:16 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:16 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:16 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:33 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:33 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:35 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 10:59:35 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:04:10 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:04:10 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:26:02 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:26:02 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:26:27 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:26:27 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:27:27 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:27:27 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:39:39 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:39:39 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:39:41 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:39:41 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:39:50 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:39:50 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:40:05 Asia/Singapore] PHP Warning:  require(/home/visionss/oyoon.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/oyoon.visions-sa.com/index.php on line 34
+[27-Apr-2025 11:40:05 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/oyoon.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/oyoon.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/oyoon.visions-sa.com/index.php on line 34
