@@ -15,7 +15,6 @@
 
 
         </ul>
-        <div class="slider_hover"></div>
     </div>
     <!--==================================================-->
     <!--End  hero section  -->
@@ -31,7 +30,7 @@
                 <div class="col-md-3">
                     <div class="h-serv {{$service->getColorClass($loop->index+1)}}">
                         <h5>{{ $service->name }}</h5>
-                        <p>{!! $service->description !!}</p>
+                        {!! $service->description !!}
 
                     </div>
                     <div class="backserv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -113,7 +112,7 @@
                         <div class="charina-donate-single-box">
                             <!-- donate thumb -->
                             <div class="donate-thumb">
-                                <img src="assets/images/pro01.png" alt="">
+                                <img src="{{ $project->image->getUrl() }}" alt="">
                                 <!-- thumb text -->
                                 <div class="thumb-category">
                                     <span> {{ $project->beneficiar->title }}</span>
