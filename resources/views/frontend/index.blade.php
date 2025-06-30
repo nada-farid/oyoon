@@ -194,7 +194,7 @@
 					<div class="blog-single-box2">
 						<!-- donations thumb -->
 						<div class="donations-thumb">
-							<img src="{{$new->image->getUrl}}" alt="">
+							<img src="{{$new->image?->getUrl()}}" alt="">
 
 						</div>
 						<div class="blogs-content">
