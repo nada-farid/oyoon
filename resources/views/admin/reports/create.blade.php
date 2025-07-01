@@ -66,12 +66,11 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.report.fields.link_helper') }}</span>
             </div>
-            <div class="form-group">
+              <div class="form-group">
                 <label class="required" for="category_id">{{ trans('cruds.report.fields.category') }}</label>
                 <select class="form-control select2 {{ $errors->has('category') ? 'is-invalid' : '' }}" name="category_id" id="category_id" required>
-                    @foreach($categories as $id => $entry)
-                        <option value="{{ $id }}" {{ old('category_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
-                    @endforeach
+                    <option value disabled selected>{{ trans('global.pleaseSelect') }}</option>
+                    <!-- AJAX -->
                 </select>
                 @if($errors->has('category'))
                     <div class="invalid-feedback">
@@ -197,5 +196,33 @@
     }
 }
 
+</script>
+<script>
+    $(document).ready(function () {
+        $('#type').change(function () {
+            var type = $(this).val();
+            if (type) {
+                $.ajax({
+                    url: '{{ route("admin.reports.getCategories") }}',
+                    type: 'GET',
+                    data: { type: type }, 
+                    
+                    success: function (data) {
+                        $('#category_id').empty(); 
+                        $('#category_id').append('<option value disabled selected>{{ trans('global.pleaseSelect') }}</option>'); 
+                        $.each(data, function (key, value) {
+                            $('#category_id').append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    },
+                    error: function () {
+                        alert('{{ trans("global.ajax_error") }}'); 
+                    }
+                });
+            } else {
+                $('#category_id').empty();
+                $('#category_id').append('<option value disabled selected>{{ trans('global.pleaseSelect') }}</option>');
+            }
+        });
+    });
 </script>
 @endsection

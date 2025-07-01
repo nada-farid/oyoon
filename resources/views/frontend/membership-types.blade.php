@@ -12,7 +12,7 @@
                 </div>
                 @foreach ($types as $type)
                     <div class="col-md-3">
-                        <img src="{{$type->image->getUrl()}}" class="img-fluid" />
+                        <img src="{{$type->image?->getUrl()}}" class="img-fluid" />
                     </div>
                 @endforeach
 

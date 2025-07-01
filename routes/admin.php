@@ -83,6 +83,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('report-categories', 'ReportCategoriesController');
 
     // Reports
+    Route::get('reports/get-categories', 'ReportsController@getCategories')->name('reports.getCategories');
     Route::delete('reports/destroy', 'ReportsController@massDestroy')->name('reports.massDestroy');
     Route::post('reports/media', 'ReportsController@storeMedia')->name('reports.storeMedia');
     Route::post('reports/ckmedia', 'ReportsController@storeCKEditorImages')->name('reports.storeCKEditorImages');

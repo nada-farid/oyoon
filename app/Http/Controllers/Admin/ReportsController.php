@@ -191,4 +191,13 @@ class ReportsController extends Controller
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
     }
+
+    
+    public function getCategories(Request $request)
+{
+    $type = $request->input('type');
+    $categories = ReportCategory::where('type', $type)->pluck('name', 'id');
+
+    return response()->json($categories);
+}
 }

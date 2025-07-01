@@ -250,8 +250,9 @@
       'X-CSRF-TOKEN': "{{ csrf_token() }}"
     },
     params: {
-      size: 2,
-       
+      size: 20,
+      width: 728,
+      height: 411,
     },
     success: function (file, response) {
       $('form').find('input[name="inner_image"]').remove()

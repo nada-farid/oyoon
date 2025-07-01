@@ -7,9 +7,11 @@
         <ul id="demo1" style="direction:ltr;">
             @foreach ($sliders as $slider)
                 <li>
-                    <div class="slidelink"><a href="{{ $slider->link }}">
+                <a href="{{ $slider->link }}">
+                        <div class="slidelink">
                             <div class="overslide"></div><img src="{{ $slider->image->getUrl() }}" />
-                        </a> </div>
+                        </div>
+                    </a>
                 </li>
             @endforeach
 

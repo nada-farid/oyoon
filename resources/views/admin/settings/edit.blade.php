@@ -706,6 +706,8 @@
             },
             params: {
                 size: 40,
+                width: 105,
+                height: 100
 
             },
             success: function(file, response) {
@@ -866,6 +868,8 @@
             },
             params: {
                 size: 20,
+                width: 180,
+                height: 52
 
             },
             success: function(file, response) {
