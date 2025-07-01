@@ -1917,7 +1917,7 @@ nav.charina_menu > ul > li > a:hover span {
 --< charina service section Css -->
 ======================================================**/
     .service-section {
-        background: url(assets/images/service-bg.png);
+        background: url(../images/service-bg.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;

@@ -24,6 +24,8 @@ class UpdateSettingRequest extends FormRequest
             'phone' => [
                 'string',
                 'nullable',
+                'regex:/^05\d{8}$/',
+
             ],
             'address' => [
                 'string',
@@ -33,6 +35,7 @@ class UpdateSettingRequest extends FormRequest
             'email' => [
                 'string',
                 'nullable',
+                'email'
             ],
             'facebook' => [
                 'string',
@@ -127,6 +130,8 @@ class UpdateSettingRequest extends FormRequest
             'chairman_image.required' => __('global.Please upload chairman image with required dimensions'),
             'logo.required' => __('global.Please upload an image with required dimensions'),
             'white_logo.required' => __('global.Please upload an image with required dimensions'),
+            'phone.regex' => 'رقم الجوال يجب ان يكون 10 أرقام ويبدأ ب 05',
+            
         ];
     }
 }

@@ -11,7 +11,7 @@ class ArticleController extends Controller
     //
     public function articles()
     {
-        $articles = Article::get();
+        $articles = Article::paginate(10);
         return view('frontend.articles', compact('articles'));
     }
 

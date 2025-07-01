@@ -237,7 +237,8 @@ Dropzone.options.imagesDropzone = {
     },
     params: {
       size: 40,
-       
+      width: 450,
+      height: 328,
     },
     success: function (file, response) {
       $('form').append('<input type="hidden" name="images[]" value="' + response.name + '">')

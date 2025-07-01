@@ -37,7 +37,7 @@
                     <!-- blog special desc -->
 
                     <div class="row pt-2">
-                        @foreach ($news->images as $key => $media)
+                        @foreach ($new->images as $key => $media)
                             <div class="col-lg-6 col-md-6">
                                 <div class="event-thumb">
                                     <img src="{{ $media->getUrl() }}">

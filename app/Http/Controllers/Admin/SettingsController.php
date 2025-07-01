@@ -50,11 +50,11 @@ class SettingsController extends Controller
             $setting->about_photo->delete();
         }
         if ($request->input('about_inner_photo', false)) {
-            if (!$setting->about_inner_photo || $request->input('about_inner_photo') !== $setting->aboutabout_inner_photo_photo->file_name) {
+            if (!$setting->about_inner_photo || $request->input('about_inner_photo') !== $setting->about_inner_photo->file_name) {
                 if ($setting->about_inner_photo) {
                     $setting->about_inner_photo->delete();
                 }
-                $setting->addMedia(storage_path('tmp/uploads/' . basename($request->input('about_inner_photo'))))->toMediaCollection('about_photo');
+                $setting->addMedia(storage_path('tmp/uploads/' . basename($request->input('about_inner_photo'))))->toMediaCollection('about_inner_photo');
             }
         } elseif ($setting->about_inner_photo) {
             $setting->about_inner_photo->delete();
@@ -67,8 +67,8 @@ class SettingsController extends Controller
                 }
                 $setting->addMedia(storage_path('tmp/uploads/' . basename($request->input('logo'))))->toMediaCollection('logo');
             }
-        } elseif ($setting->white_logo) {
-            $setting->white_logo->delete();
+        } elseif ($setting->logo) {
+            $setting->logo->delete();
         }
 
         if ($request->input('white_logo', false)) {

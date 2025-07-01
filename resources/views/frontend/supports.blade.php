@@ -10,7 +10,7 @@
         <div class="row">
           @foreach($supports as $support)
             <div class="col-12 col-lg-3 col-md-4">
-                <div class="service-single-box">
+                <div class="service-single-box upper">
                     <!-- serivce icon -->
                     <div class="service-icon">
                         <img src="{{$support->icon->getUrl()}}" alt="">

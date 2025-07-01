@@ -255,7 +255,7 @@
                             </a>
                         </li>
                     @endcan
-                    @can('report_money_access')
+                    {{-- @can('report_money_access')
                         <li class="c-sidebar-nav-item">
                             <a href="{{ route('admin.report-moneys.index') }}"
                                 class="c-sidebar-nav-link {{ request()->is('admin/report-moneys') || request()->is('admin/report-moneys/*') ? 'c-active' : '' }}">
@@ -265,7 +265,7 @@
                                 {{ trans('cruds.reportMoney.title') }}
                             </a>
                         </li>
-                    @endcan
+                    @endcan --}}
                 </ul>
             </li>
         @endcan
@@ -290,7 +290,7 @@
                             </a>
                         </li>
                     @endcan
-                    @can('volunteer_guide_access')
+                    {{-- @can('volunteer_guide_access')
                         <li class="c-sidebar-nav-item">
                             <a href="{{ route('admin.volunteer-guides.index') }}"
                                 class="c-sidebar-nav-link {{ request()->is('admin/volunteer-guides') || request()->is('admin/volunteer-guides/*') ? 'c-active' : '' }}">
@@ -300,7 +300,7 @@
                                 {{ trans('cruds.volunteerGuide.title') }}
                             </a>
                         </li>
-                    @endcan
+                    @endcan --}}
                 </ul>
             </li>
         @endcan
@@ -350,7 +350,7 @@
                 </ul>
             </li>
         @endcan
-        @can('said_about_us_access')
+        {{-- @can('said_about_us_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route('admin.said-about-uss.index') }}"
                     class="c-sidebar-nav-link {{ request()->is('admin/said-about-uss') || request()->is('admin/said-about-uss/*') ? 'c-active' : '' }}">
@@ -360,7 +360,7 @@
                     {{ trans('cruds.saidAboutUs.title') }}
                 </a>
             </li>
-        @endcan
+        @endcan --}}
         @can('director_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route('admin.directors.index') }}"
