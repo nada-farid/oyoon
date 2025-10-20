@@ -1,0 +1,405 @@
+AWSTATS DATA FILE 7.9 (build 20230108)
+# If you remove this file, all statistics for date 202509 will be lost/reset.
+# Last config file used to build this data file was /home/oyoonjeddah/tmp/awstats/ssl/awstats.oyoonjeddah.org.sa.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2056                
+POS_TIME 2737                
+POS_VISITOR 3426                
+POS_DAY 3870                
+POS_DOMAIN 4036                
+POS_LOGIN 4305                
+POS_ROBOT 4460                
+POS_WORMS 4625                
+POS_EMAILSENDER 4756                
+POS_EMAILRECEIVER 4899                
+POS_SESSION 4975                
+POS_FILESIZE 6607                
+POS_SIDER 5122                
+POS_FILETYPES 5257                
+POS_DOWNLOADS 5338                
+POS_OS 5386                
+POS_BROWSER 5497                
+POS_SCREENSIZE 5656                
+POS_UNKNOWNREFERER 5730                
+POS_UNKNOWNREFERERBROWSER 5817                
+POS_ORIGIN 5899                
+POS_SEREFERRALS 6031                
+POS_PAGEREFS 6175                
+POS_SEARCHWORDS 6323                
+POS_KEYWORDS 6475                
+POS_MISC 2401                
+POS_ERRORS 6534                
+POS_CLUSTER 4161                
+POS_SIDER_404 6707                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20250903034740 231 65978 8472700808578
+FirstTime 20250902211647
+LastTime 20250903034359
+LastUpdate 20250903035143 231 0 231 0 0
+TotalVisits 12                  
+TotalUnique 9                   
+MonthHostsKnown 0                   
+MonthHostsUnknown 9                   
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+FlashSupport 0 0 0
+QuickTimeSupport 0 0 0
+TotalMisc 0 0 0
+JavascriptDisabled 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+DirectorSupport 0 0 0
+AddToFavourites 0 0 0
+JavaEnabled 0 0 0
+RealPlayerSupport 0 0 0
+PDFSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 3 3 942 21 33 0
+1 0 0 0 18 21 938
+2 3 3 942 29 33 314
+3 4 4 1256 12 14 0
+4 0 0 0 0 0 0
+5 0 0 0 0 0 0
+6 0 0 0 0 0 0
+7 0 0 0 0 0 0
+8 0 0 0 0 0 0
+9 0 0 0 0 0 0
+10 0 0 0 0 0 0
+11 0 0 0 0 0 0
+12 0 0 0 0 0 0
+13 0 0 0 0 0 0
+14 0 0 0 0 0 0
+15 0 0 0 0 0 0
+16 0 0 0 0 0 0
+17 0 0 0 0 0 0
+18 0 0 0 0 0 0
+19 0 0 0 0 0 0
+20 0 0 0 48 52 0
+21 5 5 1570 12 19 0
+22 1 1 314 12 18 314
+23 2 2 628 22 23 1254
+END_TIME
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 9
+172.81.59.32 6 6 1884 20250903020856
+143.14.109.173 3 3 942 20250903034359 20250903034350 /
+154.213.199.170 2 2 628 20250902232423
+124.236.100.56 2 2 628 20250903023111
+23.27.66.145 1 1 314 20250902211929
+194.169.94.251 1 1 314 20250902211647
+217.180.43.244 1 1 314 20250903034326 20250903034326 /
+166.88.176.34 1 1 314 20250902211931
+49.12.184.166 1 1 314 20250902220827
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 2
+20250902 8 8 2512 6
+20250903 10 10 3140 6
+END_DAY
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 5
+us 11 11 3454
+gb 2 2 628
+cn 2 2 628
+ao 2 2 628
+in 1 1 314
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 1
+MJ12bot/ 9 2820 20250903025645 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Session range - Number of visits
+BEGIN_SESSION 1
+0s-30s 10
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 1
+/ 18 5652 12 10
+END_SIDER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 1
+html 18 5652 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 4
+win10 11 11
+win8.1 1 1
+macosx15 1 1
+linux 5 5
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 5
+chrome131.0.0.0 1 1
+chrome42.0.2311.90 1 1
+opera89.0.4447.51 9 9
+chrome61.0.3163.100 1 1
+chrome114.0.0.0 6 6
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 0
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 10 10
+From1 0 0
+From2 0 0
+From3 0 0
+From4 8 8
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 1
+404 199 0
+END_ERRORS
+
+# Payload Range - Payload Frequency
+BEGIN_FILESIZE 2
+100-500 27
+0-44 204
+END_FILESIZE
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 151
+/ar/comment/reply/node/272/field_comments/32161 1 https://www.oyoonjeddah.org.sa/ar/comment/26887
+/ar/comment/reply/node/178/field_comments/28674 1 https://www.oyoonjeddah.org.sa/ar/comment/33362
+/ar/comment/reply/node/213/field_comments/56620 1 https://www.oyoonjeddah.org.sa/ar/comment/47483
+/ar/registration 4 -
+/ar/photo-albums 1 -
+/ar/comment/176537 1 -
+/ar/comment/reply/node/274/field_comments/168854 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/274
+/ksa91/ar/node/343 1 -
+/ar/comment/reply/node/78/field_comments/48492 1 https://www.oyoonjeddah.org.sa/ar/comment/48272
+/ar/comment/48934 1 -
+/ar/comment/reply/node/78/field_comments/17415 1 -
+/ar/comment/reply/node/178/field_comments/48613 1 https://www.oyoonjeddah.org.sa/ar/comment/48287
+/ar/comment/reply/node/278/field_comments/1127 1 https://www.oyoonjeddah.org.sa/ar/comment/1208
+/ar/comment/38490 1 -
+/en/filter/tips/plain_text 1 https://www.oyoonjeddah.org.sa/index.php/en/filter/tips/plain_text
+/ar/comment/reply/node/78/field_comments/58106 1 https://www.oyoonjeddah.org.sa/ar/comment/57905
+/blog-verify 1 -
+/ar/comment/reply/node/178/field_comments/37522 1 https://www.oyoonjeddah.org.sa/ar/comment/40425
+/ar/alakhbar/214 3 -
+/ksa91/en 1 -
+/ar/comment/reply/node/178/field_comments/46382 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/178
+/sites/default/files/2024-07/%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%B5%D8%B1%D9%81%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A7%D8%AA.pdf 1 -
+/ar/comment/reply/node/262/field_comments/45833 1 https://www.oyoonjeddah.org.sa/ar/comment/45780
+/en/advertisments 1 -
+/ar/comment/reply/node/178/field_comments/43029 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/178
+/ar/comment/reply/node/50/field_comments/75697 1 https://www.oyoonjeddah.org.sa/ar/comment/75658
+/sites/default/files/2020-11/sa2em1.jpg 1 -
+/ar/comment/reply/node/78/field_comments/216674 1 https://www.oyoonjeddah.org.sa/ar/comment/217179
+/ar/comment/reply/node/178/field_comments/38628 1 https://www.oyoonjeddah.org.sa/ar/comment/45730
+/sites/default/files/2024-10/%D8%A2%D9%84%D9%8A%D8%A9%20%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%B7%D9%88%D8%B9%D9%8A%D9%86_0.pdf 1 -
+/ar/comment/reply/node/178/field_comments/38445 1 https://www.oyoonjeddah.org.sa/ar/comment/30567
+/ar/comment/32310 1 -
+/sites/default/files/2020-11/%D8%A2%D9%84%D9%8A%D8%A9%20%D8%AA%D8%B9%D9%8A%D9%8A%D9%86%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A.pdf 2 -
+/ksa91/ar/node/986 1 -
+/en/node/352 1 https://oyoonjeddah.org.sa/en/node/352
+/ar/comment/reply/node/274/field_comments/149761 1 https://www.oyoonjeddah.org.sa/ar/comment/152583
+/ar/%D8%A7%D9%84%D8%B4%D9%81%D8%A7%D9%81%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AD%D9%88%D9%83%D9%85%D8%A9 1 -
+/ar/comment/reply/node/78/field_comments/44552 1 https://www.oyoonjeddah.org.sa/ar/comment/44554
+/index.php/ar/comment/50456 1 https://oyoonjeddah.org.sa/index.php/ar/comment/47097
+/en/node/214 1 -
+/ar/comment/reply/node/78/field_comments/51821 1 https://www.oyoonjeddah.org.sa/ar/comment/51851
+/ar/comment/reply/node/178/field_comments/37952 1 https://www.oyoonjeddah.org.sa/ar/comment/36688
+/index.php/ar/comment/43232 1 https://oyoonjeddah.org.sa/index.php/ar/alakhbar/189
+/ar/comment/reply/node/178/field_comments/48823 1 https://www.oyoonjeddah.org.sa/ar/comment/47433
+/contact/ 1 -
+/en/node/78 2 -
+/ar/alakhbar/213 1 -
+/en/news/50 4 -
+/ar/comment/112811 1 -
+/ar/comment/reply/node/278/field_comments/20305 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/278
+/ar/comment/reply/node/213/field_comments/61091 1 https://www.oyoonjeddah.org.sa/ar/comment/60434
+/index.php/ar/comment/13636 1 https://oyoonjeddah.org.sa/index.php/ar/alakhbar/189
+/ksa91/ar/node/1022 1 -
+/ar/comment/reply/node/278/field_comments/40945 1 https://www.oyoonjeddah.org.sa/ar/comment/38586
+/ar/comment/reply/node/187/field_comments/46728 1 https://www.oyoonjeddah.org.sa/ar/comment/48767
+/sites/default/files/2021-02/img-banner-3.png 1 -
+/index.php/ar/alakhbar/187 1 https://www.oyoonjeddah.org.sa/index.php/en/node/187
+/ar/comment/reply/node/78/field_comments/35847 1 https://www.oyoonjeddah.org.sa/ar/comment/35869
+/ar 1 -
+/ar/comment/reply/node/50/field_comments/262853 1 -
+/ksa91/ar/node/880 1 -
+/sites/default/files/2024-01/%D9%85%D8%AD%D8%B6%D8%B1%20%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%20%D8%A7%D9%84%D8%B9%D9%85%D9%88%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%8A%20%D9%84%D8%B9%D8%A7%D9%85%20%D9%A2%D9%A0%D9%A2%D9%A1%D9%85.pdf 5 -
+/sites/default/files/2020-11/%D8%A7%D8%B9%D9%84%D8%A7%D9%86_1.png 1 -
+/ar/comment/117559 1 -
+/ar/comment/26949 1 -
+/ar/user/login 2 https://www.google.com.om/
+/ar/comment/reply/node/178/field_comments/45044 1 https://www.oyoonjeddah.org.sa/ar/comment/50642
+/ar/alakhbar/78 2 -
+/ar/comment/reply/node/269/field_comments/46021 1 https://www.oyoonjeddah.org.sa/ar/comment/36970
+/index.php/ar/comment/29643 1 https://oyoonjeddah.org.sa/index.php/ar/alakhbar/189
+/index.php/ar/comment/reply/node/189/field_comments/1278 1 https://oyoonjeddah.org.sa/index.php/ar/comment/778
+/sites/default/files/2024-01/%D9%85%D8%AD%D8%B6%D8%B1%20%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D9%88%D9%8A%D9%85%D8%A9%20%D8%BA%D9%8A%D8%B1%20%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%8A%201-%D9 1 -
+/ar/alakhbar/269 1 -
+/ar/comment/reply/node/213/field_comments/247462 1 https://www.oyoonjeddah.org.sa/ar/comment/243442
+/ar/comment/reply/node/178/field_comments/32665 1 https://www.oyoonjeddah.org.sa/ar/comment/38959
+/ar/comment/reply/node/50/field_comments/321692 1 https://www.oyoonjeddah.org.sa/ar/news/50
+/ar/comment/reply/node/50/field_comments/62193 1 https://www.oyoonjeddah.org.sa/ar/comment/62246
+/ar/comment/reply/node/278/field_comments/17160 1 https://www.oyoonjeddah.org.sa/ar/comment/17150
+/ar/comment/reply/node/178/field_comments/66776 1 https://www.oyoonjeddah.org.sa/ar/comment/63383
+/cgi-bin/ 1 -
+/robots.txt 9 -
+/ar/comment/reply/node/272/field_comments/62742 1 https://www.oyoonjeddah.org.sa/ar/comment/64976
+/ar/comment/reply/node/178/field_comments/52419 1 https://www.oyoonjeddah.org.sa/ar/comment/53867
+/index.php/ar/comment/reply/node/189/field_comments/5173 1 https://oyoonjeddah.org.sa/index.php/ar/alakhbar/189
+/ar/comment/reply/node/278/field_comments/1021 1 https://www.oyoonjeddah.org.sa/ar/comment/1071
+/ar/user/register 5 -
+/ar/comment/reply/node/178/field_comments/55268 1 https://www.oyoonjeddah.org.sa/ar/comment/55356
+/ksa91/ar/node/482 1 -
+/ar/comment/reply/node/278/field_comments/144594 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/278
+/ar/comment/48425 1 -
+/ar/comment/reply/node/178/field_comments/64719 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/178
+/ar/comment/reply/node/78/field_comments/49410 1 https://www.oyoonjeddah.org.sa/ar/comment/49319
+/ar/comment/reply/node/213/field_comments/53351 1 https://www.oyoonjeddah.org.sa/ar/comment/60409
+/sites/default/files/2020-11/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%AA%D8%B4%D9%83%D9%8A%D9%84%20%D9%85%D8%AC%D9%84%D8%B3%20%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9.pdf 2 -
+/ar/comment/reply/node/78/field_comments/217978 1 https://www.oyoonjeddah.org.sa/ar/comment/217701
+/sites/default/files/2023-12/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D8%A6%D9%85%20%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A%D8%A9%202018_compressed.pdf 5 -
+/ar/comment/reply/node/78/field_comments/130418 1 https://www.oyoonjeddah.org.sa/ar/comment/130638
+/ar/comment/reply/node/213/field_comments/46868 1 https://www.oyoonjeddah.org.sa/ar/comment/46868
+/index.php/ar/comment/reply/node/267/field_comments/973 1 https://oyoonjeddah.org.sa/index.php/ar/alakhbar/267
+/ar/alakhbar/262 1 https://oyoonjeddah.org.sa/
+/ar/comment/reply/node/78/field_comments/56202 1 https://www.oyoonjeddah.org.sa/ar/comment/56174
+/ar/comment/reply/node/50/field_comments/47750 1 https://www.oyoonjeddah.org.sa/ar/comment/47692
+/ar/comment/reply/node/213/field_comments/72173 1 https://www.oyoonjeddah.org.sa/ar/comment/249662
+/ar/jeddah-art-murals 1 -
+/index.php/ar/user/register 6 https://www.oyoonjeddah.org.sa/
+/ar/comment/70910 1 -
+/ar/comment/reply/node/178/field_comments/50566 1 https://www.oyoonjeddah.org.sa/ar/comment/49214
+/index.php/en/node/262 1 -
+/cgi-sys/ 1 -
+/ar/comment/28220 1 -
+/index.php/ar/comment/53510 1 https://oyoonjeddah.org.sa/index.php/ar/alakhbar/189
+/ar/comment/reply/node/272/field_comments/22759 1 https://www.oyoonjeddah.org.sa/ar/comment/64976
+/ar/comment/reply/node/278/field_comments/111451 1 https://www.oyoonjeddah.org.sa/ar/comment/99193
+/en/user/login 1 -
+/index.php/ar/comment/reply/node/189/field_comments/6667 1 https://oyoonjeddah.org.sa/index.php/ar/alakhbar/189
+/ar/comment/reply/node/178/field_comments/74928 1 https://www.oyoonjeddah.org.sa/ar/comment/27215
+/ar/comment/reply/node/278/field_comments/20506 1 https://www.oyoonjeddah.org.sa/ar/comment/20476
+/ar/comment/reply/node/262/field_comments/34443 1 https://www.oyoonjeddah.org.sa/ar/comment/34208
+/en/node/278 1 -
+/ar/comment/reply/node/274/field_comments/257427 1 https://www.oyoonjeddah.org.sa/ar/comment/24948
+/ar/comment/reply/node/50/field_comments/298079 1 https://www.oyoonjeddah.org.sa/ar/news/50
+/ar/comment/reply/node/178/field_comments/29275 1 https://www.oyoonjeddah.org.sa/ar/comment/27457
+/index.php/ar/comment/35355 1 https://oyoonjeddah.org.sa/index.php/ar/alakhbar/189
+/sites/default/files/2023-12/%D9%85%D8%AD%D8%B6%D8%B1%20%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%20%D9%85%D8%AC%D9%84%D8%B3%20%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9%2018.pdf 2 -
+/ksa91/ar/node/335 1 -
+/ar/comment/reply/node/178/field_comments/27471 1 https://www.oyoonjeddah.org.sa/ar/comment/23699
+/ar/comment/reply/node/178/field_comments/25164 1 https://www.oyoonjeddah.org.sa/ar/comment/26242
+/ar/comment/reply/node/78/field_comments/67985 1 https://www.oyoonjeddah.org.sa/ar/comment/68026
+/ar/comment/reply/node/278/field_comments/17548 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/278
+/ar/comment/36904 1 -
+/ar/comment/reply/node/274/field_comments/201232 1 https://www.oyoonjeddah.org.sa/ar/comment/193809
+/ar/comment/reply/node/277/field_comments/83818 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/277
+/ksa91/ar/node/588 1 -
+/ar/alakhbar/142 1 -
+/ar/news/50 5 -
+/ar/%D8%A3%D9%84%D8%A8%D9%88%D9%85-%D8%B5%D9%88%D8%B1/399 1 -
+/ar/comment/reply/node/78/field_comments/103833 1 -
+/ar/comment/reply/node/262/field_comments/253945 1 https://www.oyoonjeddah.org.sa/ar/comment/253934
+/ar/comment/reply/node/78/field_comments/50010 1 https://www.oyoonjeddah.org.sa/ar/comment/50139
+/ar/comment/reply/node/178/field_comments/45964 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/178
+/ksa91/ar/node/953 1 -
+/sites/default/files/2021-07/WhatsApp%20Image%202021-07-10%20at%2010.33.19%20AM.jpeg 1 -
+/ksa91/ar/node/969 1 -
+/user/login 6 https://oyoonjeddah.org.sa/user/login
+/ar/comment/reply/node/178/field_comments/22444 1 https://www.oyoonjeddah.org.sa/ar/comment/25281
+/sites/default/files/replies-samples.pdf 1 -
+/index.php/ar/comment/49013 1 https://oyoonjeddah.org.sa/index.php/ar/comment/47097
+/sites/default/files/2022-08/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B5%D8%AD%D9%81%D9%8A%D8%A9%20%D9%84%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A9%20%D8%B5%D8%A7%D8%AD%D8%A8%20%D8%B8%D9%84%D9%83.pdf 1 https://oyoonjeddah.org.sa/ar/transparency-and-governance
+/ar/comment/reply/node/142/field_comments/6316 1 https://www.oyoonjeddah.org.sa/ar/comment/7067
+/en 1 -
+/ar/comment/reply/node/178/field_comments/56882 1 https://www.oyoonjeddah.org.sa/ar/alakhbar/178
+END_SIDER_404

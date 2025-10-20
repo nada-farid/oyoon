@@ -117,7 +117,7 @@
                                 <img src="{{ $project->image->getUrl() }}" alt="">
                                 <!-- thumb text -->
                                 <div class="thumb-category">
-                                    <span> {{ $project->beneficiar->title }}</span>
+                                    <span> {{ $project->beneficiar->title ?? 'عامة' }}</span>
                                 </div>
                             </div>
                             <!-- donate content -->
@@ -232,7 +232,7 @@
 				
 					<div class="charina-section-title text-center pb-20">
 
-						<h1> شركــاؤونا </h1>
+						<h1> شركــاؤنا </h1>
 
 					</div>
 				</div>

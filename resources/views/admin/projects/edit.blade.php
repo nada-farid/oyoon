@@ -129,8 +129,7 @@
                                     // Init request
                                     var xhr = new XMLHttpRequest();
                                     xhr.open('POST'
-                                        , '{{ route('
-                                        admin.projects.storeCKEditorImages ') }}'
+                                        , '{{ route('admin.projects.storeCKEditorImages') }}'
                                         , true);
                                     xhr.setRequestHeader('x-csrf-token', window._token);
                                     xhr.setRequestHeader('Accept', 'application/json');
@@ -201,8 +200,7 @@
 
 <script>
     Dropzone.options.imageDropzone = {
-        url: '{{ route('
-        admin.projects.storeMedia ') }}'
+        url: '{{ route('admin.projects.storeMedia') }}'
         , maxFilesize: 40, // MB
         acceptedFiles: '.jpeg,.jpg,.png,.gif'
         , maxFiles: 1
@@ -228,9 +226,9 @@
             }
         }
         , init: function() {
-            @if(isset($project) && $project - > image)
+            @if(isset($project) && $project->image)
             var file = {
-                !!json_encode($project - > image) !!
+                !!json_encode($project->image) !!
             }
             this.options.addedfile.call(this, file)
             this.options.thumbnail.call(this, file, file.preview ? ? file.preview_url)
@@ -260,8 +258,7 @@
 </script>
 <script>
     Dropzone.options.innerImageDropzone = {
-        url: '{{ route('
-        admin.projects.storeMedia ') }}'
+        url: '{{ route('admin.projects.storeMedia') }}'
         , maxFilesize: 2, // MB
         acceptedFiles: '.jpeg,.jpg,.png,.gif'
         , maxFiles: 1
@@ -286,79 +283,15 @@
             }
         }
         , init: function() {
-            @if(isset($project) && $project - > inner_image)
+            @if(isset($project) && $project->inner_image)
             var file = {
-                !!json_encode($project - > inner_image) !!
+                !!json_encode($project->inner_image) !!
             }
             this.options.addedfile.call(this, file)
             this.options.thumbnail.call(this, file, file.preview ? ? file.preview_url)
             file.previewElement.classList.add('dz-complete')
             $('form').append('<input type="hidden" name="inner_image" value="' + file.file_name + '">')
             this.options.maxFiles = this.options.maxFiles - 1
-            @endif
-        }
-        , error: function(file, response) {
-            if ($.type(response) === 'string') {
-                var message = response //dropzone sends it's own error messages in string
-            } else {
-                var message = response.errors.file
-            }
-            file.previewElement.classList.add('dz-error')
-            _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
-            _results = []
-            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-                node = _ref[_i]
-                _results.push(node.textContent = message)
-            }
-
-            return _results
-        }
-    }
-
-</script>
-<script>
-    var uploadedImagesMap = {}
-    Dropzone.options.imagesDropzone = {
-        url: '{{ route('
-        admin.newss.storeMedia ') }}'
-        , maxFilesize: 40, // MB
-        acceptedFiles: '.jpeg,.jpg,.png,.gif'
-        , addRemoveLinks: true
-        , headers: {
-            'X-CSRF-TOKEN': "{{ csrf_token() }}"
-        }
-        , params: {
-            size: 40
-            , width: 450
-            , height: 328
-        , }
-        , success: function(file, response) {
-            $('form').append('<input type="hidden" name="images[]" value="' + response.name + '">')
-            uploadedImagesMap[file.name] = response.name
-        }
-        , removedfile: function(file) {
-            console.log(file)
-            file.previewElement.remove()
-            var name = ''
-            if (typeof file.file_name !== 'undefined') {
-                name = file.file_name
-            } else {
-                name = uploadedImagesMap[file.name]
-            }
-            $('form').find('input[name="images[]"][value="' + name + '"]').remove()
-        }
-        , init: function() {
-            @if(isset($news) && $news - > images)
-            var files = {
-                !!json_encode($news - > images) !!
-            }
-            for (var i in files) {
-                var file = files[i]
-                this.options.addedfile.call(this, file)
-                this.options.thumbnail.call(this, file, file.preview ? ? file.preview_url)
-                file.previewElement.classList.add('dz-complete')
-                $('form').append('<input type="hidden" name="images[]" value="' + file.file_name + '">')
-            }
             @endif
         }
         , error: function(file, response) {

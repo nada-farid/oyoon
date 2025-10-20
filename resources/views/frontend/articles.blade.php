@@ -31,7 +31,7 @@
                                 <!-- event desc -->
                                 <div class="event-discription">
                                     <p>
-                                        {{ $article->short_description }}
+                                        {!! $article->short_description !!}
                                     </p>
                                 </div>
                                 <!-- event text -->
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 @endforeach
-                {{ $articles->links('vendor.custom-pagination') }}
+                {{ $articles->links('vendor.pagination.custom-pagination') }}
 
             </div>
         </div>

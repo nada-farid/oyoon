@@ -26,5 +26,6 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('contact', 'ContactUsController@contact')->name('contact');
     Route::post('contact', 'ContactUsController@store')->name('contact.store');
     Route::get('media', 'MediaController@media')->name('media');
+    Route::get('clear', 'HomeController@cache')->name('clear');    
 
 });

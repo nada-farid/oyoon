@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use DateTimeInterface;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -55,4 +56,15 @@ class Gallery extends Model implements HasMedia
 
         return $file;
     }
+    
+public function getCustomDateAttribute()
+{
+    if ($this->created_at) {
+        return $this->created_at
+            ->locale('ar')
+            ->translatedFormat('d - m - Y'); 
+    }
+
+    return null;
+}
 }

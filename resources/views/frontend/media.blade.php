@@ -19,18 +19,11 @@
                             <div class="blogs-content">
                                 <!-- blog text -->
                                 <div class="blog-text2">
-                                    <p> <span class="blog-rt"><i class="bi bi-calendar2-check"></i>ديسمبر 10, 2024</span>
+                                    <p> <span class="blog-rt"><i class="bi bi-calendar2-check"></i>{{$media->custom_date}}</span>
                                     </p>
                                 </div>
                                 <!-- blog title -->
-                                <div class="blog-title2">
-                                    <h3><a href="media-single.html">{{$media->name}}</a></h3>
-                                </div>
-
-
-                                <div class="charina-button a">
-                                    <a href="media-single.html">المزيد <i class="bi bi-chevron-double-left"></i></a>
-                                </div>
+                              
                             </div>
                         </div>
                     </div>
