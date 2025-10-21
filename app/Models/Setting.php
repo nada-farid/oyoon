@@ -29,6 +29,8 @@ class Setting extends Model implements HasMedia
         'chairman_image',
         'signature_image',
         'about_inner_photo',
+        'organizational_chart',
+        'brochure',
     ];
 
     protected $fillable = [
@@ -154,6 +156,30 @@ class Setting extends Model implements HasMedia
     public function getAboutInnerPhotoAttribute()
     {
         $file = $this->getMedia('about_inner_photo')->last();
+        if ($file) {
+            $file->url       = $file->getUrl();
+            $file->thumbnail = $file->getUrl('thumb');
+            $file->preview   = $file->getUrl('preview');
+        }
+
+        return $file;
+    }
+
+    public function getOrganizationalChartAttribute()
+    {
+        $file = $this->getMedia('organizational_chart')->last();
+        if ($file) {
+            $file->url       = $file->getUrl();
+            $file->thumbnail = $file->getUrl('thumb');
+            $file->preview   = $file->getUrl('preview');
+        }
+
+        return $file;
+    }
+
+    public function getBrochureAttribute()
+    {
+        $file = $this->getMedia('brochure')->last();
         if ($file) {
             $file->url       = $file->getUrl();
             $file->thumbnail = $file->getUrl('thumb');

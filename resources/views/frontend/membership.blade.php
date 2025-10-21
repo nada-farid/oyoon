@@ -25,15 +25,15 @@
                             <h1>البيانات الشخصية</h1>
                         </div>
                         <!-- form  -->
-                        <form action="{{ route('frontend.membership.store') }}" method="POST" id="dreamit-form">
+                        <form action="{{ route('frontend.membership.store') }}" method="POST" id="dreamit-form" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form_box mb-20">
                                         <input type="text" name="name"
-                                            class=" {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text"
-                                            name="name" id="name" value="{{ old('name', '') }}"
-                                            placeholder="الاسم بالكامل*">
+                                            class=" {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                                            id="name" value="{{ old('name', '') }}"
+                                            placeholder="الاسم بالكامل*" required>
                                         @if ($errors->has('name'))
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('name') }}
@@ -44,10 +44,10 @@
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
 
-                                        <input type="text" name="email"
-                                            class=" {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text"
-                                            name="email" id="email" value="{{ old('email', '') }}"
-                                            placeholder="البريد الالكتروني">
+                                        <input type="email" name="email"
+                                            class=" {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                                            id="email" value="{{ old('email', '') }}"
+                                            placeholder="البريد الالكتروني*" required>
                                         @if ($errors->has('email'))
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('email') }}
@@ -57,10 +57,10 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="phone_number"
-                                            class="{{ $errors->has('phone_number') ? 'is-invalid' : '' }}" type="text"
-                                            name="phone_number" id="phone_number" value="{{ old('phone_number', '') }}"
-                                            required placeholder="الجوال">
+                                        <input type="tel" name="phone_number"
+                                            class="{{ $errors->has('phone_number') ? 'is-invalid' : '' }}"
+                                            id="phone_number" value="{{ old('phone_number', '') }}"
+                                            placeholder="الجوال*" required>
                                         @if ($errors->has('phone_number'))
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('phone_number') }}
@@ -107,48 +107,125 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="identity_date" placeholder="تاريخها ">
+                                        <input type="date" name="identity_date" 
+                                            class="{{ $errors->has('identity_date') ? 'is-invalid' : '' }}"
+                                            id="identity_date" value="{{ old('identity_date', '') }}"
+                                            placeholder="تاريخ الهوية*" required>
+                                        @if ($errors->has('identity_date'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('identity_date') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
 
 
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="residence" placeholder="مكان الاقامة ">
+                                        <input type="date" name="date_of_birth" 
+                                            class="{{ $errors->has('date_of_birth') ? 'is-invalid' : '' }}"
+                                            id="date_of_birth" value="{{ old('date_of_birth', '') }}"
+                                            placeholder="تاريخ الميلاد">
+                                        @if ($errors->has('date_of_birth'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('date_of_birth') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 ">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="neighborhood" placeholder="الحي ">
+                                        <input type="text" name="residence" 
+                                            class="{{ $errors->has('residence') ? 'is-invalid' : '' }}"
+                                            id="residence" value="{{ old('residence', '') }}"
+                                            placeholder="مكان الاقامة">
+                                        @if ($errors->has('residence'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('residence') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6 col-md-6 ">
+                                    <div class="form_box mb-20">
+                                        <input type="text" name="neighborhood" 
+                                            class="{{ $errors->has('neighborhood') ? 'is-invalid' : '' }}"
+                                            id="neighborhood" value="{{ old('neighborhood', '') }}"
+                                            placeholder="الحي">
+                                        @if ($errors->has('neighborhood'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('neighborhood') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 ">
+                                    <div class="form_box mb-20">
+                                        <input type="text" name="address" 
+                                            class="{{ $errors->has('address') ? 'is-invalid' : '' }}"
+                                            id="address" value="{{ old('address', '') }}"
+                                            placeholder="العنوان">
+                                        @if ($errors->has('address'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('address') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form_box mb-20">
+                                        <label for="photo" class="form-label">الصورة الشخصية</label>
+                                        <input type="file" name="photo" 
+                                            class="form-control {{ $errors->has('photo') ? 'is-invalid' : '' }}"
+                                            id="photo" accept="image/*">
+                                        <small class="form-text text-muted">يرجى رفع صورة شخصية واضحة (JPG, PNG, GIF)</small>
+                                        @if ($errors->has('photo'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('photo') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
 
 
                                 <div class="col-lg-12">
                                     <div class="form_box mb-20">
-                                        <input type="text" name="address" placeholder="العنوان">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form_box mb-20">
-                                        <select id="" name="type_id" form="">
-                                            <option value="">نوع العضوية</option>
+                                        <select name="type_id" 
+                                            class="{{ $errors->has('type_id') ? 'is-invalid' : '' }}"
+                                            id="type_id" required>
+                                            <option value="">اختر نوع العضوية*</option>
                                             @foreach ($types as $type)
-                                                <option value="{{ $type->id }}">{{ $type->title }}</option>
+                                                <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>
+                                                    {{ $type->title }}
+                                                </option>
                                             @endforeach
                                         </select>
+                                        @if ($errors->has('type_id'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('type_id') }}
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
-
-
                                 <div class="col-lg-12">
-                                    <label for="" class="" style="color:#808080; "><input
-                                            data-drupal-selector="" style="margin-left: 10px;"
-                                            class="form-checkbox required" type="checkbox"
-                                            id="edit-i-have-read-the-membership-registration-mechanism-and-understood"
-                                            name="i_have_read_the_membership_registration_mechanism_and_understood"
-                                            value="1" required="required" aria-required="true">لقد قرأت دليل تسجيل
-                                        العضوية وأوافق على ما جاء فيه.</label>
+                                    <div class="form_box mb-20">
+                                        <label class="agreement-label" style="color:#808080;">
+                                            <input type="checkbox" 
+                                                name="agreement" 
+                                                value="1" 
+                                                {{ old('agreement') ? 'checked' : '' }}
+                                                required 
+                                                style="margin-left: 10px;">
+                                            لقد قرأت دليل تسجيل العضوية وأوافق على ما جاء فيه.*
+                                        </label>
+                                        @if ($errors->has('agreement'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('agreement') }}
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="contact-form">

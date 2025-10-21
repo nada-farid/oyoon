@@ -6,10 +6,13 @@ use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Member extends Model
+class Member extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     public $table = 'members';
 
@@ -52,7 +55,7 @@ class Member extends Model
 
     public function setIdentityDateAttribute($value)
     {
-        $this->attributes['identity_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+        $this->attributes['identity_date'] = $value ? Carbon::createFromFormat('Y-m-d', $value)->format('Y-m-d') : null;
     }
 
     public function type()
@@ -67,6 +70,12 @@ class Member extends Model
 
     public function setDateOfBirthAttribute($value)
     {
-        $this->attributes['date_of_birth'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+        $this->attributes['date_of_birth'] = $value ? Carbon::createFromFormat('Y-m-d', $value)->format('Y-m-d') : null;
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')->fit('crop', 50, 50);
+        $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
 }

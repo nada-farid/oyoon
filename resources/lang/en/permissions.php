@@ -207,4 +207,9 @@ return [
     'membership_type_delete' => 'حذف انواع العضوية',
     'membership_type_access' => 'قائمة انواع العضوية',
     'membership_managment_access'  => 'قائمة إدارة العضوية  ',
+    'team_create' => 'أضافة عضو فريق',
+    'team_edit' => 'تعديل عضو فريق',
+    'team_show' => 'عرض عضو فريق',
+    'team_delete' => 'حذف عضو فريق',
+    'team_access' => 'قائمة فريق العمل',
 ];

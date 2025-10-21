@@ -35,8 +35,20 @@ class MemberShipController extends Controller
     {
         $member = Member::create($request->all());
 
-        Alert::success(trans('flash.store.title'),trans('flash.store.body'));
+        // Handle photo upload
+        if ($request->hasFile('photo')) {
+            $member->addMediaFromRequest('photo')
+                ->toMediaCollection('photo');
+        }
 
-        return redirect()->route('frontend.membership',$request->type);
+        Alert::success('تم التسجيل بنجاح', 'تم إرسال طلب العضوية بنجاح وسيتم مراجعته قريباً');
+
+        return redirect()->route('frontend.membership');
+    }
+
+    public function members()
+    {
+        $members = Member::with('type')->get();
+        return view('frontend.members', compact('members'));
     }
 }

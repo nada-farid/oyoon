@@ -160,6 +160,24 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('articles/media', 'ArticleController@storeMedia')->name('articles.storeMedia');
     Route::post('articles/ckmedia', 'ArticleController@storeCKEditorImages')->name('articles.storeCKEditorImages');
     Route::resource('articles', 'ArticleController');
+
+    // Team
+    Route::delete('teams/destroy', 'TeamController@massDestroy')->name('teams.massDestroy');
+    Route::post('teams/media', 'TeamController@storeMedia')->name('teams.storeMedia');
+    Route::post('teams/ckmedia', 'TeamController@storeCKEditorImages')->name('teams.storeCKEditorImages');
+    Route::resource('teams', 'TeamController');
+
+    // Video Categories
+    Route::delete('video-categories/destroy', 'VideoCategoryController@massDestroy')->name('video-categories.massDestroy');
+    Route::post('video-categories/media', 'VideoCategoryController@storeMedia')->name('video-categories.storeMedia');
+    Route::post('video-categories/ckmedia', 'VideoCategoryController@storeCKEditorImages')->name('video-categories.storeCKEditorImages');
+    Route::resource('video-categories', 'VideoCategoryController');
+
+    // Videos
+    Route::delete('videos/destroy', 'VideoController@massDestroy')->name('videos.massDestroy');
+    Route::post('videos/media', 'VideoController@storeMedia')->name('videos.storeMedia');
+    Route::post('videos/ckmedia', 'VideoController@storeCKEditorImages')->name('videos.storeCKEditorImages');
+    Route::resource('videos', 'VideoController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

@@ -1,8 +1,8 @@
 @extends('frontend.layouts.main')
 @section('content')
     @include('frontend.partial.breadcrumb', [
-        'haeding' => 'مبادرتنا',
-        'sub_heading' => 'مبادرتنا',
+        'haeding' => 'برامجنا',
+        'sub_heading' => 'برامجنا لجمعية عيون جدة',
     ])
 
     <div class="donate-section page-two">

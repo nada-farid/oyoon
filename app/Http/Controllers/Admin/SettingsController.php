@@ -136,6 +136,29 @@ class SettingsController extends Controller
         } elseif ($setting->inner_image) {
             $setting->inner_image->delete();
         }
+
+        if ($request->input('organizational_chart', false)) {
+
+            if (!$setting->organizational_chart || $request->input('organizational_chart') !== $setting->organizational_chart->file_name) {
+                if ($setting->organizational_chart) {
+                    $setting->organizational_chart->delete();
+                }
+                $setting->addMedia(storage_path('tmp/uploads/' . basename($request->input('organizational_chart'))))->toMediaCollection('organizational_chart');
+            }
+        } elseif ($setting->organizational_chart) {
+            $setting->organizational_chart->delete();
+        }
+
+        if ($request->input('brochure', false)) {
+            if (!$setting->brochure || $request->input('brochure') !== $setting->brochure->file_name) {
+                if ($setting->brochure) {
+                    $setting->brochure->delete();
+                }
+                $setting->addMedia(storage_path('tmp/uploads/' . basename($request->input('brochure'))))->toMediaCollection('brochure');
+            }
+        } elseif ($setting->brochure) {
+            $setting->brochure->delete();
+        }
         Alert::success(trans('flash.update.title'), trans('flash.update.body'));
 
         return redirect()->route('admin.settings.edit',$setting);

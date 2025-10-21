@@ -442,6 +442,30 @@
                     <span class="help-block">{{ trans('cruds.setting.fields.scope_helper') }}</span>
                 </div>
                 <div class="form-group">
+                    <label for="organizational_chart">الهيكل التنظيمي</label>
+                    <div class="needsclick dropzone {{ $errors->has('organizational_chart') ? 'is-invalid' : '' }}"
+                        id="organizational_chart-dropzone">
+                    </div>
+                    @if ($errors->has('organizational_chart'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('organizational_chart') }}
+                        </div>
+                    @endif
+                    <span class="help-block">يرجى رفع الهيكل التنظيمي بصيغة PDF أو صورة</span>
+                </div>
+                <div class="form-group">
+                    <label for="brochure">الكتيب التعريفي</label>
+                    <div class="needsclick dropzone {{ $errors->has('brochure') ? 'is-invalid' : '' }}"
+                        id="brochure-dropzone">
+                    </div>
+                    @if ($errors->has('brochure'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('brochure') }}
+                        </div>
+                    @endif
+                    <span class="help-block">يرجى رفع الكتيب التعريفي بصيغة PDF</span>
+                </div>
+                <div class="form-group">
                     <button class="btn btn-danger" type="submit">
                         {{ trans('global.save') }}
                     </button>
@@ -890,6 +914,110 @@
                     this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
                     file.previewElement.classList.add('dz-complete')
                     $('form').append('<input type="hidden" name="signature_image" value="' + file.file_name + '">')
+                    this.options.maxFiles = this.options.maxFiles - 1
+                @endif
+            },
+            error: function(file, response) {
+                if ($.type(response) === 'string') {
+                    var message = response //dropzone sends it's own error messages in string
+                } else {
+                    var message = response.errors.file
+                }
+                file.previewElement.classList.add('dz-error')
+                _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+                _results = []
+                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                    node = _ref[_i]
+                    _results.push(node.textContent = message)
+                }
+
+                return _results
+            }
+        }
+    </script>
+    <script>
+        Dropzone.options.organizationalChartDropzone = {
+            url: '{{ route('admin.settings.storeMedia') }}',
+            maxFilesize: 10, // MB
+            acceptedFiles: '.jpeg,.jpg,.png,.gif,.pdf',
+            maxFiles: 1,
+            addRemoveLinks: true,
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            params: {
+                size: 10,
+            },
+            success: function(file, response) {
+                $('form').find('input[name="organizational_chart"]').remove()
+                $('form').append('<input type="hidden" name="organizational_chart" value="' + response.name + '">')
+            },
+            removedfile: function(file) {
+                file.previewElement.remove()
+                if (file.status !== 'error') {
+                    $('form').find('input[name="organizational_chart"]').remove()
+                    this.options.maxFiles = this.options.maxFiles + 1
+                }
+            },
+            init: function() {
+                @if (isset($setting) && $setting->organizational_chart)
+                    var file = {!! json_encode($setting->organizational_chart) !!}
+                    this.options.addedfile.call(this, file)
+                    this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
+                    file.previewElement.classList.add('dz-complete')
+                    $('form').append('<input type="hidden" name="organizational_chart" value="' + file.file_name + '">')
+                    this.options.maxFiles = this.options.maxFiles - 1
+                @endif
+            },
+            error: function(file, response) {
+                if ($.type(response) === 'string') {
+                    var message = response //dropzone sends it's own error messages in string
+                } else {
+                    var message = response.errors.file
+                }
+                file.previewElement.classList.add('dz-error')
+                _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+                _results = []
+                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                    node = _ref[_i]
+                    _results.push(node.textContent = message)
+                }
+
+                return _results
+            }
+        }
+    </script>
+    <script>
+        Dropzone.options.brochureDropzone = {
+            url: '{{ route('admin.settings.storeMedia') }}',
+            maxFilesize: 15, // MB
+            acceptedFiles: '.pdf',
+            maxFiles: 1,
+            addRemoveLinks: true,
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            params: {
+                size: 15,
+            },
+            success: function(file, response) {
+                $('form').find('input[name="brochure"]').remove()
+                $('form').append('<input type="hidden" name="brochure" value="' + response.name + '">')
+            },
+            removedfile: function(file) {
+                file.previewElement.remove()
+                if (file.status !== 'error') {
+                    $('form').find('input[name="brochure"]').remove()
+                    this.options.maxFiles = this.options.maxFiles + 1
+                }
+            },
+            init: function() {
+                @if (isset($setting) && $setting->brochure)
+                    var file = {!! json_encode($setting->brochure) !!}
+                    this.options.addedfile.call(this, file)
+                    this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
+                    file.previewElement.classList.add('dz-complete')
+                    $('form').append('<input type="hidden" name="brochure" value="' + file.file_name + '">')
                     this.options.maxFiles = this.options.maxFiles - 1
                 @endif
             },

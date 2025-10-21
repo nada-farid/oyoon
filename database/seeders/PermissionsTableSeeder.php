@@ -837,9 +837,101 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id' => $i++,
+                'title' => 'team_create',
+                'type' => 'team',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'team_edit',
+                'type' => 'team',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'team_show',
+                'type' => 'team',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'team_delete',
+                'type' => 'team',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'team_access',
+                'type' => 'team',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
                 'title' => 'profile_password_edit',
                 'type' => 'profile_password',
                 'parent' => 2,
+            ],
+            // Video Category Permissions
+            [
+                'id' => $i++,
+                'title' => 'video_category_access',
+                'type' => 'video_category',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'video_category_create',
+                'type' => 'video_category',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'video_category_edit',
+                'type' => 'video_category',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'video_category_show',
+                'type' => 'video_category',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'video_category_delete',
+                'type' => 'video_category',
+                'parent' => 0,
+            ],
+            // Video Permissions
+            [
+                'id' => $i++,
+                'title' => 'video_access',
+                'type' => 'video',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'video_create',
+                'type' => 'video',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'video_edit',
+                'type' => 'video',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'video_show',
+                'type' => 'video',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'video_delete',
+                'type' => 'video',
+                'parent' => 0,
             ],
         ];
 

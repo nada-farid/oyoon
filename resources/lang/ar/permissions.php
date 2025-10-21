@@ -232,4 +232,9 @@ return [
     'service_show' => ' عرض خدمة',
     'service_delete' => ' حذف خدمة',
     'service_access' => 'قائمة الخدمات ',
+    'team_create' => 'أضافة عضو فريق',
+    'team_edit' => 'تعديل عضو فريق',
+    'team_show' => 'عرض عضو فريق',
+    'team_delete' => 'حذف عضو فريق',
+    'team_access' => 'قائمة فريق العمل',
 ];

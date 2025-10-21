@@ -3,8 +3,8 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/about', 'HomeController@about')->name('about');
     Route::get('/chairman', 'HomeController@chairman')->name('chairman');
-    Route::get('/news', 'NewController@news')->name('news');
-    Route::get('/new/{$id}', 'NewController@new')->name('new');
+    Route::get('/news', 'NewsController@news')->name('news');
+    Route::get('/new/{$id}', 'NewsController@new')->name('new');
     Route::get('/directors', 'HomeController@directors')->name('directors');
     Route::get('/partners', 'HomeController@partners')->name('partners');
     Route::get('/scope', 'HomeController@scope')->name('scope');
@@ -23,9 +23,18 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('membership_guides', 'MemberShipController@guides')->name('membership_guides');
     Route::get('membership', 'MemberShipController@membership')->name('membership');
     Route::post('membership', 'MemberShipController@store')->name('membership.store');
+    Route::get('members', 'MemberShipController@members')->name('members');
+    Route::get('organizational_chart', 'HomeController@organizationalChart')->name('organizational_chart');
+    Route::get('brochure', 'HomeController@brochure')->name('brochure');
+    Route::get('team', 'HomeController@team')->name('team');
     Route::get('contact', 'ContactUsController@contact')->name('contact');
     Route::post('contact', 'ContactUsController@store')->name('contact.store');
     Route::get('media', 'MediaController@media')->name('media');
     Route::get('clear', 'HomeController@cache')->name('clear');    
+    
+    // Video Library Routes
+    Route::get('videos', 'VideoController@index')->name('videos.index');
+    Route::get('videos/category/{category}', 'VideoController@category')->name('videos.category');
+    Route::get('videos/{video}', 'VideoController@show')->name('videos.show');
 
 });

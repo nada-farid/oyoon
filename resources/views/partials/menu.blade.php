@@ -143,7 +143,7 @@
         @endcan
         @can('media_center_access')
             <li
-                class="c-sidebar-nav-dropdown {{ request()->is('admin/newss*') ? 'c-show' : '' }} {{ request()->is('admin/galleries*') ? 'c-show' : '' }} {{ request()->is('admin/articles*') ? 'c-show' : '' }}">
+                class="c-sidebar-nav-dropdown {{ request()->is('admin/newss*') ? 'c-show' : '' }} {{ request()->is('admin/galleries*') ? 'c-show' : '' }} {{ request()->is('admin/articles*') ? 'c-show' : '' }} {{ request()->is('admin/videos*') ? 'c-show' : '' }} {{ request()->is('admin/video-categories*') ? 'c-show' : '' }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
                     <i class="fa-fw fas fa-compact-disc c-sidebar-nav-icon">
 
@@ -181,6 +181,28 @@
 
                                 </i>
                                 {{ trans('cruds.article.title') }}
+                            </a>
+                        </li>
+                    @endcan
+                    @can('video_category_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route('admin.video-categories.index') }}"
+                                class="c-sidebar-nav-link {{ request()->is('admin/video-categories') || request()->is('admin/video-categories/*') ? 'c-active' : '' }}">
+                                <i class="fa-fw fas fa-tags c-sidebar-nav-icon">
+
+                                </i>
+                                فئات الفيديو
+                            </a>
+                        </li>
+                    @endcan
+                    @can('video_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route('admin.videos.index') }}"
+                                class="c-sidebar-nav-link {{ request()->is('admin/videos') || request()->is('admin/videos/*') ? 'c-active' : '' }}">
+                                <i class="fa-fw fas fa-video c-sidebar-nav-icon">
+
+                                </i>
+                                الفيديوهات
                             </a>
                         </li>
                     @endcan
@@ -415,6 +437,17 @@
 
                     </i>
                     {{ trans('cruds.certificate.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('team_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route('admin.teams.index') }}"
+                    class="c-sidebar-nav-link {{ request()->is('admin/teams') || request()->is('admin/teams/*') ? 'c-active' : '' }}">
+                    <i class="fa-fw fas fa-users c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.team.title') }}
                 </a>
             </li>
         @endcan

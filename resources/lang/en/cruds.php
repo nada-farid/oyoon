@@ -716,4 +716,31 @@ return [
         ],
     ],
 
+    'team' => [
+        'title'          => 'Team',
+        'title_singular' => 'Team Member',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => ' ',
+            'name'              => 'Name',
+            'name_helper'       => ' ',
+            'job_title'         => 'Job Title',
+            'job_title_helper'  => ' ',
+            'description'       => 'Description',
+            'description_helper' => ' ',
+            'image'             => 'Image',
+            'image_helper'      => ' ',
+            'sort_order'        => 'Sort Order',
+            'sort_order_helper' => ' ',
+            'is_active'         => 'Is Active',
+            'is_active_helper'  => ' ',
+            'created_at'        => 'Created at',
+            'created_at_helper' => ' ',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => ' ',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => ' ',
+        ],
+    ],
+
 ];

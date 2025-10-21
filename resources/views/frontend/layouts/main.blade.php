@@ -12,8 +12,7 @@
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}" type="text/css" media="all" />
     <!-- carousel CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.min.css') }}" type="text/css"
-        media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.min.css') }}" type="text/css" media="all" />
     <!-- animate CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.css') }}" type="text/css" media="all" />
     <!-- animated-text CSS -->
@@ -29,8 +28,7 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" type="text/css" media="all" />
     <!-- transitions CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.transitions.css') }}" type="text/css"
-        media="all" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.transitions.css') }}" type="text/css" media="all" />
     <!-- venobox CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/venobox/venobox.css') }}" type="text/css" media="all" />
     <!-- responsive CSS -->
@@ -50,28 +48,28 @@
     <script type="text/javascript">
         jQuery(document).ready(function() {
             jQuery('#demo1').skdslider({
-                'delay': 5000,
-                'animationSpeed': 2000,
-                'showNextPrev': true,
-                'showPlayButton': true,
-                'autoSlide': true,
-                'animationType': 'fading'
+                'delay': 5000
+                , 'animationSpeed': 2000
+                , 'showNextPrev': true
+                , 'showPlayButton': true
+                , 'autoSlide': true
+                , 'animationType': 'fading'
             });
             jQuery('#demo2').skdslider({
-                'delay': 5000,
-                'animationSpeed': 1000,
-                'showNextPrev': true,
-                'showPlayButton': true,
-                'autoSlide': true,
-                'animationType': 'sliding'
+                'delay': 5000
+                , 'animationSpeed': 1000
+                , 'showNextPrev': true
+                , 'showPlayButton': true
+                , 'autoSlide': true
+                , 'animationType': 'sliding'
             });
             jQuery('#demo3').skdslider({
-                'delay': 5000,
-                'animationSpeed': 2000,
-                'showNextPrev': true,
-                'showPlayButton': true,
-                'autoSlide': true,
-                'animationType': 'fading'
+                'delay': 5000
+                , 'animationSpeed': 2000
+                , 'showNextPrev': true
+                , 'showPlayButton': true
+                , 'autoSlide': true
+                , 'animationType': 'fading'
             });
 
             jQuery('#responsive').change(function() {
@@ -79,6 +77,7 @@
             });
 
         });
+
     </script>
     <!----menu---->
     <style>
@@ -105,12 +104,15 @@
             background-position: right calc(0.375em + 0.1875rem) center;
             background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
         }
+
         .slider .skdslider a.next {
             display: none;
         }
+
         .slider .skdslider a.prev {
             display: none;
         }
+
     </style>
     @yield('style')
 </head>
@@ -134,10 +136,8 @@
                 <div class="col-md-6 ">
                     <div class="header-links">
                         <ul>
-                            <li><span><i class="fa-solid fa-phone"></i></span> <a
-                                    href="#">{{ $setting->phone }}</a></li>
-                            <li><span><i class="fa-solid fa-envelope"></i></span> <a
-                                    href="#">{{ $setting->email }}</a></li>
+                            <li><span><i class="fa-solid fa-phone"></i></span> <a href="#">{{ $setting->phone }}</a></li>
+                            <li><span><i class="fa-solid fa-envelope"></i></span> <a href="#">{{ $setting->email }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -145,12 +145,12 @@
                     <div class="header_top_menu_icon text-left">
                         <div class="menu-text">
                             <p> <a href="{{route('login')}}"><i class="bi bi-person-circle"></i> دخول الأدارة </a></p>
-                        </div>
-
-                    </div>
-                </div> --}}
             </div>
+
         </div>
+    </div> --}}
+    </div>
+    </div>
     </div>
     <!--==================================================-->
     <!-- End  Header Top Menu Area Css -->
@@ -179,61 +179,66 @@
                                     <li><a href="{{ route('frontend.about') }}">عن الجمعية</a></li>
                                     <li><a href="{{ route('frontend.chairman') }}">كلمة رئيس مجلس الإدارة</a></li>
                                     <li><a href="{{ route('frontend.directors') }}">مجلس الإدارة</a></li>
-                                    <li><a href="{{ route('frontend.partners') }}">شركاؤنا</a></li>
+                                    <li><a href="{{ route('frontend.members') }}">الجمعية العمومية</a></li>
+                                    <li><a href="{{ route('frontend.organizational_chart') }}">الهيكل التنظيمي</a></li>
+                                    <li><a href="{{ route('frontend.brochure') }}">الكتيب التعريفي</a></li>
+                                    <li><a href="{{ route('frontend.team') }}">فريق العمل</a></li>
                                     <li><a href="{{ route('frontend.scope') }}">نطاق الجمعية </a></li>
                                     <li><a href="{{ route('frontend.certificates') }}">الشهادات </a></li>
-                                    {{-- <li><a  href="{{route('frontend.sustainability')}}"> مساهماتنا </a></li> --}}
+                                    {{-- <li><a  href="{{route('frontend.sustainability')}}"> مساهماتنا </a>
+                            </li> --}}
 
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">الحوكمة <span><i class="bi bi-chevron-down"></i></span></a>
-                                <ul class="sub-menu">
-                                    @foreach ($hawkma_categories as $category)
-                                        <li>
-                                            <a href="{{ route('frontend.hawkma', $category) }}"><span>
-                                                    {{ $category->name }}</span></a>
-                                        </li>
-                                    @endforeach
+                        </ul>
+                        </li>
+                        <li>
+                            <a href="#">الحوكمة <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                @foreach ($hawkma_categories as $category)
+                                <li>
+                                    <a href="{{ route('frontend.hawkma', $category) }}"><span>
+                                            {{ $category->name }}</span></a>
+                                </li>
+                                @endforeach
 
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">التقارير <span><i class="bi bi-chevron-down"></i></span></a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="{{ route('frontend.reports', 'yearly') }}"><span> تقارير سنوية
-                                            </span></a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('frontend.reports', 'money') }}"><span> تقارير مالية
-                                            </span></a>
-                                    </li>
-                                </ul>
-                            </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">التقارير <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{{ route('frontend.reports', 'yearly') }}"><span> تقارير سنوية
+                                        </span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('frontend.reports', 'money') }}"><span> تقارير مالية
+                                        </span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ route('frontend.partners') }}">شركاؤنا</a></li>
+                        <li>
+                            <a href="#">المركز الاعلامي <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ route('frontend.news') }}">الأخبار</a></li>
+                                <li><a href="{{ route('frontend.articles') }}">المقالات</a></li>
+                                <li><a href="{{ route('frontend.videos.index') }}">مكتبة الفيديو</a></li>
+                                <li><a href="{{ route('frontend.media') }}">الصور</a></li>
 
-                            <li>
-                                <a href="#">المركز الاعلامي <span><i class="bi bi-chevron-down"></i></span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{ route('frontend.news') }}">الأخبار</a></li>
-                                    <li><a href="{{ route('frontend.articles') }}">المقالات</a></li>
-                                    <li><a href="{{ route('frontend.media') }}">الصور</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ route('frontend.projects') }}"> برامجنا </a></li>
+                        <li><a href="{{ route('frontend.support') }}"> لماذا تدعمنا؟ </a></li>
+                        <li>
+                            <a href="#"> العضويات <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ route('frontend.membership_types') }}">انواع العضويات</a></li>
+                                <li><a href="{{ route('frontend.membership_guides') }}">دليل التسجيل في
+                                        العضوية</a></li>
+                                <li><a href="{{ route('frontend.membership') }}"> تسجيل العضوية</a></li>
+                            </ul>
+                        </li>
 
-                                </ul>
-                            </li>
-                            <li><a href="{{ route('frontend.projects') }}"> مبادرتنا </a></li>
-                            <li><a href="{{ route('frontend.support') }}"> لماذا تدعمنا؟ </a></li>
-                            <li>
-                                <a href="#"> العضويات <span><i class="bi bi-chevron-down"></i></span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{ route('frontend.membership_types') }}">انواع العضويات</a></li>
-                                    <li><a href="{{ route('frontend.membership_guides') }}">دليل التسجيل في
-                                            العضوية</a></li>
-                                    <li><a href="{{ route('frontend.membership') }}"> تسجيل العضوية</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="{{ route('frontend.contact') }}">التواصل</a></li>
+                        <li><a href="{{ route('frontend.contact') }}">التواصل</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -269,6 +274,9 @@
                             <li><a href="{{ route('frontend.partners') }}">شركاؤنا</a></li>
                             <li><a href="{{ route('frontend.scope') }}">نطاق الجمعية </a></li>
                             <li><a href="{{ route('frontend.certificates') }}">الشهادات </a></li>
+                            <li><a href="{{ route('frontend.organizational_chart') }}">الهيكل التنظيمي</a></li>
+                            <li><a href="{{ route('frontend.brochure') }}">الكتيب التعريفي</a></li>
+                            <li><a href="{{ route('frontend.team') }}">فريق العمل</a></li>
 
                         </ul>
                     </li>
@@ -276,10 +284,10 @@
                         <a href="#">الحوكمة <span><i class="bi bi-chevron-down"></i></span></a>
                         <ul class="sub-menu">
                             @foreach ($hawkma_categories as $category)
-                                <li>
-                                    <a href="{{ route('frontend.hawkma', $category) }}"><span>
-                                            {{ $category->name }}</span></a>
-                                </li>
+                            <li>
+                                <a href="{{ route('frontend.hawkma', $category) }}"><span>
+                                        {{ $category->name }}</span></a>
+                            </li>
                             @endforeach
                         </ul>
                     </li>
@@ -289,6 +297,7 @@
                         <ul class="sub-menu">
                             <li><a href="{{ route('frontend.news') }}">الأخبار</a></li>
                             <li><a href="{{ route('frontend.articles') }}">المقالات</a></li>
+                            <li><a href="{{ route('frontend.videos.index') }}">مكتبة الفيديو</a></li>
                             <li><a href="media.html">الصور</a></li>
 
                         </ul>
@@ -301,6 +310,7 @@
                             <li><a href="{{ route('frontend.membership_types') }}">انواع العضويات</a></li>
                             <li><a href="{{ route('frontend.membership_guides') }}">دليل التسجيل في العضوية</a></li>
                             <li><a href="{{ route('frontend.membership') }}"> تسجيل العضوية</a></li>
+                            <li><a href="{{ route('frontend.members') }}">الجمعية العمومية</a></li>
                         </ul>
                     </li>
 
@@ -339,18 +349,13 @@
                         <h4 class="widget-title">روابط سريعة </h4>
                         <div class="menu-quick-link-content">
                             <ul class="footer-widget-list">
-                                <li><a href="{{ route('frontend.contact') }}"> <i
-                                            class="bi bi-chevron-double-left"></i>التواصل</a></li>
-                                <li><a href="{{ route('frontend.directors') }}"><i
-                                            class="bi bi-chevron-double-left"></i>مجلس الإدارة</a></li>
+                                <li><a href="{{ route('frontend.contact') }}"> <i class="bi bi-chevron-double-left"></i>التواصل</a></li>
+                                <li><a href="{{ route('frontend.directors') }}"><i class="bi bi-chevron-double-left"></i>مجلس الإدارة</a></li>
                                 <li><a href="{{ $setting->donation_url }}"> <i class="bi bi-chevron-double-left"></i>
                                         تبرع معنا </a></li>
-                                <li><a href="{{ route('frontend.membership') }}"> <i
-                                            class="bi bi-chevron-double-left"></i> سجل عضويتك </a></li>
-                                <li><a href="{{ route('frontend.news') }}"> <i
-                                            class="bi bi-chevron-double-left"></i>الأخبار</a></li>
-                                <li><a href="{{ route('frontend.articles') }}"><i
-                                            class="bi bi-chevron-double-left"></i>المقالات</a></li>
+                                <li><a href="{{ route('frontend.membership') }}"> <i class="bi bi-chevron-double-left"></i> سجل عضويتك </a></li>
+                                <li><a href="{{ route('frontend.news') }}"> <i class="bi bi-chevron-double-left"></i>الأخبار</a></li>
+                                <li><a href="{{ route('frontend.articles') }}"><i class="bi bi-chevron-double-left"></i>المقالات</a></li>
                             </ul>
                         </div>
                     </div>
@@ -426,8 +431,7 @@
     <!--==================================================-->
     <div class="prgoress_indicator active-progress">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 270.456;">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 270.456;">
             </path>
         </svg>
     </div>
@@ -438,8 +442,7 @@
     <!-- Start Search Popup Area -->
     <!--==================================================-->
     <div class="search-popup">
-        <button class="close-search style-two"><span class="flaticon-multiply"><i
-                    class="far fa-times-circle"></i></span></button>
+        <button class="close-search style-two"><span class="flaticon-multiply"><i class="far fa-times-circle"></i></span></button>
         <button class="close-search"><i class="fas fa-arrow-up"></i></button>
         <form method="post" action="#">
             <div class="form-group">
@@ -491,8 +494,8 @@
             i[r] = i[r] || function() {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
+            a = s.createElement(o)
+                , m = s.getElementsByTagName(o)[0];
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
@@ -500,6 +503,7 @@
 
         ga('create', 'UA-3415878-12', 'dandywebsolution.com');
         ga('send', 'pageview');
+
     </script>
     <!----slider---->
     @yield('scripts')

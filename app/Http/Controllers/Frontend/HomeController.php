@@ -102,5 +102,21 @@ class HomeController extends Controller
         $supports = Support::get();
         return view('frontend.supports',compact('supports'));
     }
+
+    public function organizationalChart()
+    {
+        return view('frontend.organizational_chart');
+    }
+
+    public function brochure()
+    {
+        return view('frontend.brochure');
+    }
+
+    public function team()
+    {
+        $teams = \App\Models\Team::active()->ordered()->get();
+        return view('frontend.team', compact('teams'));
+    }
     
 }
