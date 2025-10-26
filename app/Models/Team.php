@@ -30,6 +30,8 @@ class Team extends Model implements HasMedia
         'job_title',
         'description',
         'sort_order',
+        'email',
+        'phone',
         'is_active',
         'created_at',
         'updated_at',
@@ -66,6 +68,6 @@ class Team extends Model implements HasMedia
 
     public function scopeOrdered($query)
     {
-        return $query->orderBy('sort_order', 'asc');
+        return $query->orderBy('sort_order', 'DESC');
     }
 }

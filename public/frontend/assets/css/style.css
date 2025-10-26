@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 /*TABLE OF CONTENTS*/
 /*=====================
 01.  top Menu Area Css
@@ -733,7 +733,7 @@ nav.charina_menu > ul > li > a:hover span {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
     .h-serv p:hover {

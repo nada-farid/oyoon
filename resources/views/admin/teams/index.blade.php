@@ -27,6 +27,12 @@
                             {{ trans('cruds.team.fields.name') }}
                         </th>
                         <th>
+                            {{ trans('cruds.team.fields.email') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.team.fields.phone') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.team.fields.job_title') }}
                         </th>
                         <th>
@@ -54,6 +60,12 @@
                             </td>
                             <td>
                                 {{ $team->name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $team->email ?? '' }}
+                            </td>
+                            <td>
+                                {{ $team->phone ?? '' }}
                             </td>
                             <td>
                                 {{ $team->job_title ?? '' }}

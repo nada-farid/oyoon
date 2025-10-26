@@ -21,6 +21,24 @@
                 <span class="help-block">{{ trans('cruds.team.fields.name_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="email">{{ trans('cruds.team.fields.email') }}</label>
+                <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email" id="email" value="{{ old('email', $team->email) }}" required>
+                @if($errors->has('email'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('email') }}
+                    </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <label class="required" for="phone">{{ trans('cruds.team.fields.phone') }}</label>
+                <input class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" type="text" name="phone" id="phone" value="{{ old('phone', $team->phone) }}" required>
+                @if($errors->has('phone'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('phone') }}
+                    </div>
+                @endif
+            </div>
+            <div class="form-group">
                 <label class="required" for="job_title">{{ trans('cruds.team.fields.job_title') }}</label>
                 <input class="form-control {{ $errors->has('job_title') ? 'is-invalid' : '' }}" type="text" name="job_title" id="job_title" value="{{ old('job_title', $team->job_title) }}" required>
                 @if($errors->has('job_title'))

@@ -1,6 +1,5 @@
 <!--==================================================-->
-	<div class="breatcam-section d-flex align-items-center" style="background-image: {{$setting->inner_image ?  $setting->inner_image->getUrl()  : "url(
-	'frontend/assets/images/breatcome-bg.png')"}}">
+	<div class="breatcam-section d-flex align-items-center" style="background-image: url('{{$setting->inner_image ? $setting->inner_image->getUrl() : asset('frontend/assets/images/breatcome-bg.png')}}')">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">

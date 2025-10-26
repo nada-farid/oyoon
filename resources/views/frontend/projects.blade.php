@@ -18,7 +18,7 @@
                                 @endif
                                 <!-- thumb text -->
                                 <div class="thumb-category">
-                                    <span> {{ $project->beneficiar->name }}</span>
+                                    <span> {{ $project->beneficiar?->name ?? 'عامة' }}</span>
                                 </div>
                             </div>
                             <!-- donate content -->

@@ -28,6 +28,21 @@
                         {{ trans('cruds.hawkma.fields.title') }}
                     </th>
                     <th>
+                        الوصف
+                    </th>
+                    <th>
+                        الإصدار
+                    </th>
+                    <th>
+                        نوع المستند
+                    </th>
+                    <th>
+                        الحالة
+                    </th>
+                    <th>
+                        تاريخ السريان
+                    </th>
+                    <th>
                         {{ trans('cruds.hawkma.fields.file') }}
                     </th>
                     <th>
@@ -91,6 +106,11 @@
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },
 { data: 'title', name: 'title' },
+{ data: 'description', name: 'description' },
+{ data: 'version', name: 'version' },
+{ data: 'document_type', name: 'document_type' },
+{ data: 'status', name: 'status' },
+{ data: 'effective_date', name: 'effective_date' },
 { data: 'file', name: 'file', sortable: false, searchable: false },
 { data: 'category_name', name: 'category.name' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }

@@ -6,7 +6,7 @@
 <!--==================================================-->
     @include('frontend.partial.breadcrumb', [
         'haeding' => 'فريق العمل',
-        'sub_heading' => 'فريق العمل في جمعية عيون جدة',
+        'sub_heading' => 'فريق العمل ومعلومات الفريق التنفيذي ',
     ])
 <!--==================================================-->
 <!-- End Breadcrumb Area -->
@@ -21,7 +21,6 @@
             <div class="col-lg-12">
                 <div class="section-title text-center">
                     <h2>فريق العمل</h2>
-                    <p>تعرف على فريق العمل المتميز في جمعية عيون جدة</p>
                 </div>
             </div>
         </div>
@@ -46,6 +45,8 @@
                             <div class="member-info">
                                 <h4 class="member-name">{{ $team->name }}</h4>
                                 <p class="member-position">{{ $team->job_title }}</p>
+                                <p class="member-email">{{ $team->email }}</p>
+                                <p class="member-phone">{{ $team->phone }}</p>
                                 @if($team->description)
                                     <p class="member-description">{{ Str::limit($team->description, 100) }}</p>
                                 @endif

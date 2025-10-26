@@ -81,6 +81,75 @@
     </script>
     <!----menu---->
     <style>
+.charina_menu > ul > li > a {
+    display: inline-block;
+    margin: 30px 5px;
+    -webkit-transition: .5s;
+    color: #1b3434;
+    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+.single-brand-thumb {
+    border: 1px solid #d1d1d1;
+    padding: 0px;
+    background: #fff;
+    filter: grayscale(100%);
+}
+.header-button a {
+    font-size: 13px;
+    padding: 10px 22px;
+    font-weight: 500;
+    line-height: 10px;
+    border-radius: 30px;
+    color: #fff;
+    background: #135a7c;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+   .social-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 8px; 
+        align-items: center;
+        justify-content: flex-end; 
+    }
+
+        .social-list li {
+            margin: 0;
+        }
+
+        .social-list a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 28px;
+            color: #1b3434;
+            text-decoration: none;
+            font-size: 15px;
+            transition: transform 0.15s ease;
+        }
+
+            .social-list a:hover {
+                transform: translateY(-2px);
+                color: #135a7c;
+            }
+
+        .social-list i {
+            pointer-events: none;
+        }
+        .footer-bottom-area .social-list a {
+     color: #fff;
+     opacity: .602;
+ }
         .invalid-feedback {
             width: 100%;
             margin-top: 0.25rem;
@@ -141,6 +210,22 @@
                         </ul>
                     </div>
                 </div>
+                <div class="col-md-6">
+				<div class="header_top_menu_icon text-left">
+					<nav class="social-links" aria-label="">
+						<ul class="social-list" dir="rtl">
+						
+							<li><a href="{{ $setting->facebook }}" target="_blank" rel="" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->instagram }}" target="_blank" rel="" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->twitter }}" target="_blank" rel="" aria-label="Twitter / X"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->snap_chat }}" target="_blank" rel="" aria-label="Snapchat"><i class="fab fa-snapchat-ghost" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->tiktok }}" target="_blank" rel="" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->youtube }}" target="_blank" rel="" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->linkedin }}" target="_blank" rel="" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+						</ul>
+					</nav>
+				</div>
+</div>
                 {{-- <div class="col-md-6">
                     <div class="header_top_menu_icon text-left">
                         <div class="menu-text">
@@ -174,12 +259,12 @@
                     <nav class="charina_menu">
                         <ul class="nav_scroll">
                             <li>
-                                <a href="#">عن الجمعية <span><i class="bi bi-chevron-down"></i></span></a>
+                                <a href="#"> من نحن<span><i class="bi bi-chevron-down"></i></span></a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ route('frontend.about') }}">عن الجمعية</a></li>
+                                    <li><a href="{{ route('frontend.about') }}">من نحن </a></li>
+                                    <li><a href="{{ route('frontend.members') }}">الجمعية العمومية</a></li>
                                     <li><a href="{{ route('frontend.chairman') }}">كلمة رئيس مجلس الإدارة</a></li>
                                     <li><a href="{{ route('frontend.directors') }}">مجلس الإدارة</a></li>
-                                    <li><a href="{{ route('frontend.members') }}">الجمعية العمومية</a></li>
                                     <li><a href="{{ route('frontend.organizational_chart') }}">الهيكل التنظيمي</a></li>
                                     <li><a href="{{ route('frontend.brochure') }}">الكتيب التعريفي</a></li>
                                     <li><a href="{{ route('frontend.team') }}">فريق العمل</a></li>
@@ -187,6 +272,7 @@
                                     <li><a href="{{ route('frontend.certificates') }}">الشهادات </a></li>
                                     {{-- <li><a  href="{{route('frontend.sustainability')}}"> مساهماتنا </a>
                             </li> --}}
+                              <li><a href="{{ route('frontend.support') }}"> لماذا تدعمنا؟ </a></li>
 
                         </ul>
                         </li>
@@ -209,10 +295,10 @@
                                     <a href="{{ route('frontend.reports', 'yearly') }}"><span> تقارير سنوية
                                         </span></a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('frontend.reports', 'money') }}"><span> تقارير مالية
-                                        </span></a>
-                                </li>
+                                <!--<li>-->
+                                <!--    <a href="{{ route('frontend.reports', 'money') }}"><span> تقارير مالية-->
+                                <!--        </span></a>-->
+                                <!--</li>-->
                             </ul>
                         </li>
                         <li><a href="{{ route('frontend.partners') }}">شركاؤنا</a></li>
@@ -227,7 +313,12 @@
                             </ul>
                         </li>
                         <li><a href="{{ route('frontend.projects') }}"> برامجنا </a></li>
-                        <li><a href="{{ route('frontend.support') }}"> لماذا تدعمنا؟ </a></li>
+                      
+                        
+                                <li><a href="#">قياس رضا الجمهور  </a></li>
+                                <li><a href="https://n9.cl/j8xas"> 
+                                        دراسة احتياجات المستفيدين </a></li>
+                        
                         <li>
                             <a href="#"> العضويات <span><i class="bi bi-chevron-down"></i></span></a>
                             <ul class="sub-menu">
@@ -238,7 +329,7 @@
                             </ul>
                         </li>
 
-                        <li><a href="{{ route('frontend.contact') }}">التواصل</a></li>
+                        <li><a href="{{ route('frontend.contact') }}">الأقتراحات والشكاوي</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -314,7 +405,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="{{ route('frontend.contact') }}">التواصل</a></li>
+                    <li><a href="{{ route('frontend.contact') }}">الأقتراحات والشكاوي</a></li>
                 </ul>
             </nav>
         </div>
@@ -349,7 +440,7 @@
                         <h4 class="widget-title">روابط سريعة </h4>
                         <div class="menu-quick-link-content">
                             <ul class="footer-widget-list">
-                                <li><a href="{{ route('frontend.contact') }}"> <i class="bi bi-chevron-double-left"></i>التواصل</a></li>
+                                <li><a href="{{ route('frontend.contact') }}"> <i class="bi bi-chevron-double-left"></i>الأقتراحات والشكاوي</a></li>
                                 <li><a href="{{ route('frontend.directors') }}"><i class="bi bi-chevron-double-left"></i>مجلس الإدارة</a></li>
                                 <li><a href="{{ $setting->donation_url }}"> <i class="bi bi-chevron-double-left"></i>
                                         تبرع معنا </a></li>
@@ -418,10 +509,27 @@
                         <p> جيمع الحقوق محفوظة جمعية عيون جدة © بواسطة تكامل الرؤى </p>
                     </div>
                 </div>
+                  <div class="col-md-6">
+				<div class="header_top_menu_icon text-left">
+					<nav class="social-links" aria-label="">
+						<ul class="social-list" dir="rtl">
+						
+							<li><a href="{{ $setting->facebook }}" target="_blank" rel="" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->instagram }}" target="_blank" rel="" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->twitter }}" target="_blank" rel="" aria-label="Twitter / X"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->snap_chat }}" target="_blank" rel="" aria-label="Snapchat"><i class="fab fa-snapchat-ghost" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->tiktok }}" target="_blank" rel="" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->youtube }}" target="_blank" rel="" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+							<li><a href="{{ $setting->linkedin }}" target="_blank" rel="" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+						</ul>
+					</nav>
+				</div>
+</div>
 
             </div>
         </div>
     </div>
+    
     @include('sweetalert::alert')
     <!--==================================================-->
     <!-- End  Footer Section -->

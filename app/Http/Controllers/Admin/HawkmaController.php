@@ -11,6 +11,7 @@ use App\Models\HawkamCategory;
 use App\Models\Hawkma;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\DataTables\Facades\DataTables;
@@ -51,6 +52,22 @@ class HawkmaController extends Controller
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
             });
+            $table->editColumn('description', function ($row) {
+                return $row->description ? Str::limit($row->description, 50) : '';
+            });
+            $table->editColumn('version', function ($row) {
+                return $row->version ? $row->version : '';
+            });
+            $table->editColumn('document_type', function ($row) {
+                return $row->document_type ? ucfirst($row->document_type) : '';
+            });
+            $table->editColumn('status', function ($row) {
+                $badgeClass = $row->status === 'active' ? 'badge-success' : 'badge-warning';
+                return '<span class="badge ' . $badgeClass . '">' . ucfirst($row->status) . '</span>';
+            });
+            $table->editColumn('effective_date', function ($row) {
+                return $row->effective_date ? $row->effective_date : '';
+            });
             $table->editColumn('file', function ($row) {
                 return $row->file ? '<a href="' . $row->file->getUrl() . '" target="_blank">' . trans('global.downloadFile') . '</a>' : '';
             });
@@ -61,7 +78,7 @@ class HawkmaController extends Controller
                 return $row->category ? $row->category->name : '';
             });
 
-            $table->rawColumns(['actions', 'placeholder', 'file', 'published', 'category']);
+            $table->rawColumns(['actions', 'placeholder', 'file', 'published', 'category', 'status']);
 
             return $table->make(true);
         }

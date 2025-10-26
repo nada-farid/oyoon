@@ -28,6 +28,14 @@ class Hawkma extends Model implements HasMedia
 
     protected $fillable = [
         'title',
+        'description',
+        'version',
+        'effective_date',
+        'expiry_date',
+        'document_type',
+        'status',
+        'sort_order',
+        'tags',
         'published',
         'category_id',
         'created_at',
@@ -66,5 +74,35 @@ class Hawkma extends Model implements HasMedia
     public function category()
     {
         return $this->belongsTo(HawkamCategory::class, 'category_id');
+    }
+
+    public function getTagsArrayAttribute()
+    {
+        return $this->tags ? json_decode($this->tags, true) : [];
+    }
+
+    public function setTagsArrayAttribute($value)
+    {
+        $this->attributes['tags'] = json_encode($value);
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('published', true);
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+    }
+
+    public function scopeByType($query, $type)
+    {
+        return $query->where('document_type', $type);
+    }
+
+    public function scopeByCategory($query, $categoryId)
+    {
+        return $query->where('category_id', $categoryId);
     }
 }

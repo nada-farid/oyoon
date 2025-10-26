@@ -68,88 +68,34 @@
                     <div class="tab">
                         <!-- / tabs -->
                         <ul class="tabs">
-                            <li><a href="#"> الرؤية </a></li>
-                            <li><a href="#"> الرسالة </a></li>
-                            <li><a href="#"> الاهداف </a></li>
-                            <li><a href="#">مبادراتنــا</a></li>
+                            @foreach($services as $service)
+                             <li><a href="#">{{$service->name}}</a></li>
+                            @endforeach
                         </ul>
                         <!-- tab content -->
                         <div class="tab_content">
                             <!-- tabs_item -->
+                           @foreach($services as $service)
                             <div class="tabs_item">
                                 <div class="charina-single-mission-items">
                                     <!-- mission thumb -->
                                     <div class="charina-mission-thumb">
-                                        <img src="{{ asset('frontend/assets/images/resource/tab1.jpg') }}" alt="">
+                                      <img src="{{ asset('frontend/assets/images/resource/tab' . ($loop->index + 1) . '.jpg') }}" alt="">
+
                                     </div>
                                     <!-- mission content -->
                                     <div class="charina-mission-content">
                                         <!-- mission title -->
                                         <div class="mission-title">
-                                            <h3> الرؤية </h3>
+                                            <h3> {{$service->name}} </h3>
                                         </div>
                                         <!-- mission items desc -->
-                                        {!! $setting->mission !!}
+                                        {!! $service->description !!}
                                     </div>
                                     <!-- / mission content -->
                                 </div>
                             </div>
-                            <!-- tabs_item -->
-                            <div class="tabs_item">
-                                <div class="charina-single-mission-items">
-                                    <!-- mission thumb -->
-                                    <div class="charina-mission-thumb">
-                                        <img src="{{ asset('frontend/assets/images/resource/tab2.jpg') }}" alt="">
-                                    </div>
-                                    <!-- mission content -->
-                                    <div class="charina-mission-content">
-                                        <!-- mission title -->
-                                        <div class="mission-title">
-                                            <h3> الرسالة </h3>
-                                        </div>
-                                        <!-- mission items desc -->
-                                        {!! $setting->vision !!}
-                                    </div>
-                                    <!-- / mission content -->
-                                </div>
-                            </div>
-                            <!-- / tabs_item -->
-                            <div class="tabs_item">
-                                <div class="charina-single-mission-items">
-                                    <!-- mission thumb -->
-                                    <div class="charina-mission-thumb">
-                                        <img src="{{ asset('frontend/assets/images/resource/tab3.jpg') }}" alt="">
-                                    </div>
-                                    <!-- mission content -->
-                                    <div class="charina-mission-content">
-                                        <!-- mission title -->
-                                        <div class="mission-title">
-                                            <h3> الأهداف </h3>
-                                        </div>
-                                        {!! $setting->values !!}
-                                    </div>
-                                    <!-- / mission content -->
-                                </div>
-                            </div>
-                            <!-- tabs_item -->
-                            <div class="tabs_item">
-                                <div class="charina-single-mission-items">
-                                    <!-- mission thumb -->
-                                    <div class="charina-mission-thumb">
-                                        <img src="{{ asset('frontend/assets/images/resource/tab4.jpg') }}" alt="">
-                                    </div>
-                                    <!-- mission content -->
-                                    <div class="charina-mission-content">
-                                        <!-- mission title -->
-                                        <div class="mission-title">
-                                            <h3> مبادرتنا </h3>
-                                        </div>
-                                        <!-- mission items desc -->
-                                        {!! $setting->initiative !!}
-                                    </div>
-                                    <!-- / mission content -->
-                                </div>
-                            </div>
+                            @endforeach
                         </div> <!-- / tab_content -->
                     </div>
                 </div>

@@ -32,6 +32,12 @@ class CreateSettingsTable extends Migration
             $table->integer('counter_2_value')->nullable();
             $table->string('counter_3_text')->nullable();
             $table->integer('counter_3_value')->nullable();
+            $table->string('counter_4_text')->nullable();
+            $table->integer('counter_4_value')->nullable();
+            $table->string('counter_5_text')->nullable();
+            $table->integer('counter_5_value')->nullable();
+            $table->string('counter_6_text')->nullable();
+            $table->integer('counter_6_value')->nullable();
             $table->longText('vision')->nullable();
             $table->longText('mission')->nullable();
             $table->longText('values')->nullable();

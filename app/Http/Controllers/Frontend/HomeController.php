@@ -27,16 +27,16 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slider::all();
-        $services = Service::get()->take(4);
         $projects = Project::all();
         $news = News::get();
         $testimonials = SaidAboutUs::all();
         $clients = Partner::all();
-        return view('frontend.index', compact('sliders', 'services', 'projects', 'news', 'testimonials','clients'));
+        return view('frontend.index', compact('sliders', 'projects', 'news', 'testimonials','clients'));
     }
     public function about()
     {
-        return view('frontend.about');
+         $services = Service::get()->take(4);
+        return view('frontend.about',compact('services'));
     }
     public function chairman()
     {
@@ -51,7 +51,7 @@ class HomeController extends Controller
 
     public function directors()
     {
-        $directors = Director::all();
+        $directors = Director::orderBy('created_at', 'DESC')->get();
         return view('frontend.directors',compact('directors'));
     }
     
