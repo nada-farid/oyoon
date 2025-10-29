@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\AudienceSatisfaction;
 use App\Models\Certificate;
 use App\Models\Director;
 use App\Models\Gallery;
@@ -17,6 +18,7 @@ use App\Models\SaidAboutUs;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Support;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
@@ -115,8 +117,20 @@ class HomeController extends Controller
 
     public function team()
     {
-        $teams = \App\Models\Team::active()->ordered()->get();
+        $teams = Team::active()->ordered()->get();
         return view('frontend.team', compact('teams'));
+    }
+
+    public function audienceSatisfaction($id)
+    {
+        $satisfaction = AudienceSatisfaction::with('publishedItems')->findOrFail($id);
+        return view('frontend.audience-satisfaction', compact('satisfaction'));
+    }
+
+    public function responseLog()
+    {
+        $responseLog = \App\Models\Setting::first()->response_log;
+        return view('frontend.response-log', compact('responseLog'));
     }
     
 }

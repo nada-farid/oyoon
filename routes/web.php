@@ -12,6 +12,7 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('/sustainability', 'HomeController@sustainability')->name('sustainability');
     Route::get('hawkma/{category}', 'HomeController@hawkma')->name('hawkma');
     Route::get('reports/{type}', 'HomeController@reports')->name('reports');
+    Route::get('audience-satisfaction/{id}', 'HomeController@audienceSatisfaction')->name('audience-satisfaction');
     Route::get('news', 'NewsController@news')->name('news');
     Route::get('new/{id}', 'NewsController@new')->name('new');
     Route::get('articles', 'ArticleController@articles')->name('articles');
@@ -29,6 +30,7 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('team', 'HomeController@team')->name('team');
     Route::get('contact', 'ContactUsController@contact')->name('contact');
     Route::post('contact', 'ContactUsController@store')->name('contact.store');
+    Route::get('response-log', 'HomeController@responseLog')->name('response-log');
     Route::get('media', 'MediaController@media')->name('media');
     Route::get('clear', 'HomeController@cache')->name('clear');    
     

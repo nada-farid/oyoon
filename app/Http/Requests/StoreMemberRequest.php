@@ -16,6 +16,39 @@ class StoreMemberRequest extends FormRequest
 
     public function rules()
     {
+        // Check if request is from admin (has is_admin flag or different route)
+        $isFromAdmin = request()->is('admin/*') || request()->has('is_admin');
+        
+        if ($isFromAdmin) {
+            // Admin can add members with only name and type required
+            return [
+                'name' => [
+                    'string',
+                    'required',
+                    'max:255',
+                ],
+                'type_id' => [
+                    'required',
+                    'integer',
+                    'exists:membership_types,id',
+                ],
+                'job' => ['nullable'],
+                'employer' => ['nullable'],
+                'email' => ['nullable', 'email'],
+                'phone_number' => ['nullable'],
+                'identity_number' => ['nullable'],
+                'identity_date' => ['nullable'],
+                'date_of_birth' => ['nullable'],
+                'residence' => ['nullable'],
+                'neighborhood' => ['nullable'],
+                'address' => ['nullable'],
+                'agreement' => ['nullable'],
+                'photo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+                'is_active' => ['boolean'],
+            ];
+        }
+        
+        // Frontend form requires all fields
         return [
             'name' => [
                 'string',

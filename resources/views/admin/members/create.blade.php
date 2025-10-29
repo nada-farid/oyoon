@@ -20,6 +20,22 @@
                 <span class="help-block">{{ trans('cruds.member.fields.name_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="type_id">{{ trans('cruds.member.fields.type') }}</label>
+                <select class="form-control select2 {{ $errors->has('type') ? 'is-invalid' : '' }}" name="type_id" id="type_id" required>
+                    @foreach($types as $id => $entry)
+                        <option value="{{ $id }}" {{ old('type_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('type'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('type') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.member.fields.type_helper') }}</span>
+            </div>
+            <hr style="margin: 30px 0; border-color: #ddd;">
+            <h5 style="color: #666; margin-bottom: 20px;">معلومات إضافية (اختياري)</h5>
+            <div class="form-group">
                 <label for="job">{{ trans('cruds.member.fields.job') }}</label>
                 <input class="form-control {{ $errors->has('job') ? 'is-invalid' : '' }}" type="text" name="job" id="job" value="{{ old('job', '') }}">
                 @if($errors->has('job'))
@@ -40,8 +56,8 @@
                 <span class="help-block">{{ trans('cruds.member.fields.employer_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="phone_number">{{ trans('cruds.member.fields.phone_number') }}</label>
-                <input class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" type="text" name="phone_number" id="phone_number" value="{{ old('phone_number', '') }}" required>
+                <label for="phone_number">{{ trans('cruds.member.fields.phone_number') }}</label>
+                <input class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" type="text" name="phone_number" id="phone_number" value="{{ old('phone_number', '') }}">
                 @if($errors->has('phone_number'))
                     <div class="invalid-feedback">
                         {{ $errors->first('phone_number') }}
@@ -50,8 +66,8 @@
                 <span class="help-block">{{ trans('cruds.member.fields.phone_number_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="email">{{ trans('cruds.member.fields.email') }}</label>
-                <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text" name="email" id="email" value="{{ old('email', '') }}" required>
+                <label for="email">{{ trans('cruds.member.fields.email') }}</label>
+                <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text" name="email" id="email" value="{{ old('email', '') }}">
                 @if($errors->has('email'))
                     <div class="invalid-feedback">
                         {{ $errors->first('email') }}
@@ -60,8 +76,8 @@
                 <span class="help-block">{{ trans('cruds.member.fields.email_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="identity_number">{{ trans('cruds.member.fields.identity_number') }}</label>
-                <input class="form-control {{ $errors->has('identity_number') ? 'is-invalid' : '' }}" type="text" name="identity_number" id="identity_number" value="{{ old('identity_number', '') }}" required>
+                <label for="identity_number">{{ trans('cruds.member.fields.identity_number') }}</label>
+                <input class="form-control {{ $errors->has('identity_number') ? 'is-invalid' : '' }}" type="text" name="identity_number" id="identity_number" value="{{ old('identity_number', '') }}">
                 @if($errors->has('identity_number'))
                     <div class="invalid-feedback">
                         {{ $errors->first('identity_number') }}
@@ -70,28 +86,14 @@
                 <span class="help-block">{{ trans('cruds.member.fields.identity_number_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="identity_date">{{ trans('cruds.member.fields.identity_date') }}</label>
-                <input class="form-control date {{ $errors->has('identity_date') ? 'is-invalid' : '' }}" type="text" name="identity_date" id="identity_date" value="{{ old('identity_date') }}" required>
+                <label for="identity_date">{{ trans('cruds.member.fields.identity_date') }}</label>
+                <input class="form-control date {{ $errors->has('identity_date') ? 'is-invalid' : '' }}" type="text" name="identity_date" id="identity_date" value="{{ old('identity_date') }}">
                 @if($errors->has('identity_date'))
                     <div class="invalid-feedback">
                         {{ $errors->first('identity_date') }}
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.member.fields.identity_date_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label class="required" for="type_id">{{ trans('cruds.member.fields.type') }}</label>
-                <select class="form-control select2 {{ $errors->has('type') ? 'is-invalid' : '' }}" name="type_id" id="type_id" required>
-                    @foreach($types as $id => $entry)
-                        <option value="{{ $id }}" {{ old('type_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('type'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('type') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.member.fields.type_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="date_of_birth">{{ trans('cruds.member.fields.date_of_birth') }}</label>
@@ -134,17 +136,16 @@
                 <span class="help-block">{{ trans('cruds.member.fields.address_helper') }}</span>
             </div>
             <div class="form-group">
-                <div class="form-check {{ $errors->has('agreement') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="agreement" value="0">
-                    <input class="form-check-input" type="checkbox" name="agreement" id="agreement" value="1" {{ old('agreement', 0) == 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="agreement">{{ trans('cruds.member.fields.agreement') }}</label>
+                <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="is_active" value="0">
+                    <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', 1) == 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="is_active">تفعيل العضو (سيظهر في الفرونت اند)</label>
                 </div>
-                @if($errors->has('agreement'))
+                @if($errors->has('is_active'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('agreement') }}
+                        {{ $errors->first('is_active') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.member.fields.agreement_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

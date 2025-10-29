@@ -159,6 +159,18 @@ class SettingsController extends Controller
         } elseif ($setting->brochure) {
             $setting->brochure->delete();
         }
+
+        if ($request->input('response_log', false)) {
+            if (!$setting->response_log || $request->input('response_log') !== $setting->response_log->file_name) {
+                if ($setting->response_log) {
+                    $setting->response_log->delete();
+                }
+                $setting->addMedia(storage_path('tmp/uploads/' . basename($request->input('response_log'))))->toMediaCollection('response_log');
+            }
+        } elseif ($setting->response_log) {
+            $setting->response_log->delete();
+        }
+
         Alert::success(trans('flash.update.title'), trans('flash.update.body'));
 
         return redirect()->route('admin.settings.edit',$setting);

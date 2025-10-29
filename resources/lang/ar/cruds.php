@@ -471,8 +471,8 @@ return [
         ],
     ],
    'member' => [
-        'title' => 'طلبات العضوية',
-        'title_singular' => 'طلبات العضوية',
+        'title' => 'اعضاء الجمعية',
+        'title_singular' => 'اعضاء الجمعية',
         'fields' => [
             'id' => 'المعرف',
             'id_helper' => ' ',
@@ -668,6 +668,16 @@ return [
             'initiative_helper'             => ' ',
             'support_text'                  => ' نص الدعم',
             'support_text_helper'           => ' ',
+            'map_url'                       => 'رابط الخريطة',
+            'map_url_helper'                => ' ',
+            'tiktok'                        => 'تيكتوك',
+            'tiktok_helper'                 => ' ',
+            'youtube'                       => 'يوتيوب',
+            'youtube_helper'                => ' ',
+            'form_url'                      => 'رابط الاستمارة الإلكترونية',
+            'form_url_helper'               => ' ',
+            'whatsapp_url'                  => 'رابط الواتساب',
+            'whatsapp_url_helper'           => ' ',
         ],
     ],
     'director' => [

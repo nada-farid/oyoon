@@ -933,6 +933,68 @@ class PermissionsTableSeeder extends Seeder
                 'type' => 'video',
                 'parent' => 0,
             ],
+            // Audience Satisfaction Permissions
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_access',
+                'type' => 'audience_satisfaction',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_create',
+                'type' => 'audience_satisfaction',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_edit',
+                'type' => 'audience_satisfaction',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_show',
+                'type' => 'audience_satisfaction',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_delete',
+                'type' => 'audience_satisfaction',
+                'parent' => 0,
+            ],
+            // Audience Satisfaction Item Permissions
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_item_access',
+                'type' => 'audience_satisfaction_item',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_item_create',
+                'type' => 'audience_satisfaction_item',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_item_edit',
+                'type' => 'audience_satisfaction_item',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_item_show',
+                'type' => 'audience_satisfaction_item',
+                'parent' => 0,
+            ],
+            [
+                'id' => $i++,
+                'title' => 'audience_satisfaction_item_delete',
+                'type' => 'audience_satisfaction_item',
+                'parent' => 0,
+            ],
         ];
 
         Permission::insert($permissions);

@@ -32,7 +32,7 @@ class MembersController extends Controller
                 $deleteGate    = 'member_delete';
                 $crudRoutePart = 'members';
 
-                return view('partials.datatablesActions', compact(
+                return view('partials.memberDatatablesActions', compact(
                     'viewGate',
                     'editGate',
                     'deleteGate',
@@ -69,8 +69,15 @@ class MembersController extends Controller
             $table->editColumn('agreement', function ($row) {
                 return '<input type="checkbox" disabled ' . ($row->agreement ? 'checked' : null) . '>';
             });
+            
+            $table->editColumn('is_active', function ($row) {
+                $checked = $row->is_active ? 'checked' : '';
+                $status = $row->is_active ? 'نشط' : 'غير نشط';
+                $class = $row->is_active ? 'success' : 'secondary';
+                return '<span class="badge badge-' . $class . '">' . $status . '</span>';
+            });
 
-            $table->rawColumns(['actions', 'placeholder', 'type', 'agreement']);
+            $table->rawColumns(['actions', 'placeholder', 'type', 'agreement', 'is_active']);
 
             return $table->make(true);
         }
@@ -139,5 +146,18 @@ class MembersController extends Controller
         }
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function toggleActive(Member $member)
+    {
+        abort_if(Gate::denies('member_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $member->update(['is_active' => !$member->is_active]);
+
+        return response()->json([
+            'success' => true,
+            'message' => $member->is_active ? 'تم تفعيل العضو بنجاح' : 'تم إلغاء تفعيل العضو بنجاح',
+            'is_active' => $member->is_active
+        ]);
     }
 }

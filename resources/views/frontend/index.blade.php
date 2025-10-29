@@ -1,291 +1,690 @@
-@extends('frontend.layouts.main')
-@section('content')
-<!-- Start hero section -->
-<!--==================================================-->
-<div class="slider">
+<!DOCTYPE HTML>
+<html lang="en-US">
 
-    <ul id="demo1" style="direction:ltr;">
-        @foreach ($sliders as $slider)
-        <li>
-            <a href="{{ $slider->link }}">
-                <div class="slidelink">
-                    <div class="overslide"></div><img src="{{ $slider->image->getUrl() }}" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>عيون جدة</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('frontend/assets/images/fav-icon/icon.png') }}">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}" type="text/css" media="all" />
+    <!-- carousel CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.min.css') }}" type="text/css" media="all" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.css') }}" type="text/css" media="all" />
+    <!-- animated-text CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animated-text.css') }}" type="text/css" media="all" />
+    <!-- font-awesome CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/all.min.css') }}" type="text/css" media="all" />
+    <!-- font-flaticon CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/flaticon.css') }}" type="text/css" media="all" />
+    <!-- theme-default CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/theme-default.css') }}" type="text/css" media="all" />
+    <!-- meanmenu CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/meanmenu.min.css') }}" type="text/css" media="all" />
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" type="text/css" media="all" />
+    <!-- transitions CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.transitions.css') }}" type="text/css" media="all" />
+    <!-- venobox CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/venobox/venobox.css') }}" type="text/css" media="all" />
+    <!-- responsive CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}" type="text/css" media="all" />
+    <!-- modernizr js -->
+    <script src="{{ asset('frontend/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/02c22aec7b.js" crossorigin="anonymous"></script>
+
+
+    <!----slider---->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="{{ asset('frontend/src/skdslider.min.js') }}"></script>
+    <link href="{{ asset('frontend/src/skdslider.css') }}" rel="stylesheet">
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('#demo1').skdslider({
+                'delay': 5000
+                , 'animationSpeed': 2000
+                , 'showNextPrev': true
+                , 'showPlayButton': true
+                , 'autoSlide': true
+                , 'animationType': 'fading'
+            });
+            jQuery('#demo2').skdslider({
+                'delay': 5000
+                , 'animationSpeed': 1000
+                , 'showNextPrev': true
+                , 'showPlayButton': true
+                , 'autoSlide': true
+                , 'animationType': 'sliding'
+            });
+            jQuery('#demo3').skdslider({
+                'delay': 5000
+                , 'animationSpeed': 2000
+                , 'showNextPrev': true
+                , 'showPlayButton': true
+                , 'autoSlide': true
+                , 'animationType': 'fading'
+            });
+
+            jQuery('#responsive').change(function() {
+                $('#responsive_wrapper').width(jQuery(this).val());
+            });
+
+        });
+
+    </script>
+    <!----menu---->
+    <style>
+        .charina_menu>ul>li>a {
+            display: inline-block;
+            margin: 30px 5px;
+            -webkit-transition: .5s;
+            color: #1b3434;
+            font-weight: 500;
+            font-size: 12px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .single-brand-thumb {
+            border: 1px solid #d1d1d1;
+            padding: 0px;
+            background: #fff;
+        }
+
+        .header-button a {
+            font-size: 13px;
+            padding: 10px 22px;
+            font-weight: 500;
+            line-height: 10px;
+            border-radius: 30px;
+            color: #fff;
+            background: #135a7c;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        .social-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .social-list li {
+            margin: 0;
+        }
+
+        .social-list a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 28px;
+            color: #1b3434;
+            text-decoration: none;
+            font-size: 15px;
+            transition: transform 0.15s ease;
+        }
+
+        .social-list a:hover {
+            transform: translateY(-2px);
+            color: #135a7c;
+        }
+
+        .social-list i {
+            pointer-events: none;
+        }
+
+        .footer-bottom-area .social-list a {
+            color: #fff;
+            opacity: .602;
+        }
+
+        .invalid-feedback {
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: #dc3545;
+        }
+
+        .is-invalid~.invalid-feedback,
+        .is-invalid~.invalid-tooltip,
+        .was-validated :invalid~.invalid-feedback,
+        .was-validated :invalid~.invalid-tooltip {
+            display: block;
+        }
+
+        .form-control.is-invalid,
+        .was-validated .form-control:invalid {
+            border-color: #dc3545;
+            padding-right: calc(1.5em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .slider .skdslider a.next {
+            display: none;
+        }
+
+        .slider .skdslider a.prev {
+            display: none;
+        }
+
+    </style>
+    @yield('style')
+</head>
+
+<body>
+
+    <!-- loder -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+        <div class="loder-section left-section"></div>
+        <div class="loder-section right-section"></div>
+    </div>
+
+    <!--==================================================-->
+    <!-- Start  Header Top Menu Area Css -->
+    <!--==================================================-->
+    <div class="header_top_menu">
+        <div class="container">
+            <div class="row ">
+
+                <div class="col-md-6 ">
+                    <div class="header-links">
+                        <ul>
+                            <li><span><i class="fa-solid fa-phone"></i></span> <a href="#">{{ $setting->phone }}</a></li>
+                            <li><span><i class="fa-solid fa-envelope"></i></span> <a href="#">{{ $setting->email }}</a></li>
+                        </ul>
+                    </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="header_top_menu_icon text-left">
+                        <nav class="social-links" aria-label="">
+                            <ul class="social-list" dir="rtl">
+                                @if($setting->facebook)
+                                 <li><a href="{{ $setting->facebook }}" target="_blank" rel="" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->instagram)
+                                 <li><a href="{{ $setting->instagram }}" target="_blank" rel="" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->twitter)
+                                 <li><a href="{{ $setting->twitter }}" target="_blank" rel="" aria-label="Twitter / X"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->snap_chat)
+                                 <li><a href="{{ $setting->snap_chat }}" target="_blank" rel="" aria-label="Snapchat"><i class="fab fa-snapchat-ghost" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->tiktok)
+                                 <li><a href="{{ $setting->tiktok }}" target="_blank" rel="" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->youtube)
+                                 <li><a href="{{ $setting->youtube }}" target="_blank" rel="" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->linkedin)
+                                 <li><a href="{{ $setting->linkedin }}" target="_blank" rel="" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                                @endif
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                {{-- <div class="col-md-6">
+                    <div class="header_top_menu_icon text-left">
+                        <div class="menu-text">
+                            <p> <a href="{{route('login')}}"><i class="bi bi-person-circle"></i> دخول الأدارة </a></p>
+            </div>
+
+        </div>
+    </div> --}}
+    </div>
+    </div>
+    </div>
+    <!--==================================================-->
+    <!-- End  Header Top Menu Area Css -->
+    <!--===================================================-->
+    <!--==================================================-->
+    <!-- Start  Main Menu Area -->
+    <!--==================================================-->
+    <div id="sticky-header" class="charina_nav_manu ">
+        <div class="container">
+            <div class="row d-flex align-items-center" style="justify-content:space-between;">
+
+
+                <div class="logo">
+                    <a class="logo_img" href="{{ route('frontend.home') }}" title="">
+                        <img src="{{ $setting->getFirstMediaUrl('logo') }}" alt="" />
+                    </a>
+
+                </div>
+
+                <div class="menu">
+                    <nav class="charina_menu">
+                        <ul class="nav_scroll">
+                            <li>
+                                <a href="#"> من نحن<span><i class="bi bi-chevron-down"></i></span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ route('frontend.about') }}">من نحن </a></li>
+                                    <li><a href="{{ route('frontend.members') }}">الجمعية العمومية</a></li>
+                                    <li><a href="{{ route('frontend.chairman') }}">كلمة رئيس مجلس الإدارة</a></li>
+                                    <li><a href="{{ route('frontend.directors') }}">مجلس الإدارة</a></li>
+                                    <li><a href="{{ route('frontend.organizational_chart') }}">الهيكل التنظيمي</a></li>
+                                    <li><a href="{{ route('frontend.brochure') }}">الكتيب التعريفي</a></li>
+                                    <li><a href="{{ route('frontend.team') }}">فريق العمل وبيانات التواصل مع المدير التنفيذي</a></li>
+                                    <li><a href="{{ route('frontend.scope') }}">نطاق الجمعية </a></li>
+                                    <li><a href="{{ route('frontend.certificates') }}">الشهادات </a></li>
+                                    {{-- <li><a  href="{{route('frontend.sustainability')}}"> مساهماتنا </a>
+                            </li> --}}
+                            <li><a href="{{ route('frontend.support') }}"> لماذا تدعمنا؟ </a></li>
+
+                        </ul>
+                        </li>
+                        <li>
+                            <a href="#">الحوكمة <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                @foreach ($hawkma_categories as $category)
+                                <li>
+                                    <a href="{{ route('frontend.hawkma', $category) }}"><span>
+                                            {{ $category->name }}</span></a>
+                                </li>
+                                @endforeach
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">التقارير <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{{ route('frontend.reports', 'yearly') }}"><span> تقارير سنوية
+                                        </span></a>
+                                </li>
+                                <!--<li>-->
+                                <!--    <a href="{{ route('frontend.reports', 'money') }}"><span> تقارير مالية-->
+                                <!--        </span></a>-->
+                                <!--</li>-->
+                            </ul>
+                        </li>
+                        <li><a href="{{ route('frontend.partners') }}">شركاؤنا</a></li>
+                        <li>
+                            <a href="#">المركز الاعلامي <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ route('frontend.news') }}">الأخبار</a></li>
+                                <li><a href="{{ route('frontend.articles') }}">المقالات</a></li>
+                                <li><a href="{{ route('frontend.videos.index') }}">مكتبة الفيديو</a></li>
+                                <li><a href="{{ route('frontend.media') }}">الصور</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="{{ route('frontend.projects') }}"> برامجنا </a></li>
+
+                        <li>
+                            <a href="#">قياس الرضا  <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                @foreach ($audience_satisfactions as $satisfaction)
+                                <li>
+                                    <a href="{{ route('frontend.audience-satisfaction', $satisfaction->id) }}">
+                                        {{ $satisfaction->title }}
+                                    </a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li><a href="https://n9.cl/j8xas"> دراسة احتياجات المستفيدين </a></li>
+                        <li>
+                            <a href="#"> العضويات <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ route('frontend.membership_types') }}">انواع العضويات</a></li>
+                                <li><a href="{{ route('frontend.membership_guides') }}">دليل التسجيل في
+                                        العضوية</a></li>
+                                <li><a href="{{ route('frontend.membership') }}"> تسجيل العضوية</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">الاستفسارات والشكاوي <span><i class="bi bi-chevron-down"></i></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ route('frontend.contact') }}">إرسال استفسار</a></li>
+                                <li><a href="{{ route('frontend.response-log') }}">سجل الرد على الاستفسارات والشكاوي</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="header-button">
+                    <a href="{{ $setting->donation_url }}"> تبرع الأن <i class="bi bi-suit-heart"></i> </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--  Mobile Menu Area -->
+    <div class="mobile-menu-area   d-lg-none ">
+        <div class="logo">
+            <a class="logo_img" href="{{ route('frontend.home') }}" title="">
+                <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="" height="60" />
             </a>
-        </li>
-        @endforeach
 
-
-    </ul>
-</div>
-<!--==================================================-->
-<!--End  hero section  -->
-<!--==================================================-->
-<!--==================================================-->
-<!--start  hero section  -->
-<!--==================================================-->
-
-<div class="service-home-section">
-
-    <div class="row">
-        <div class="col-md-3">
-            <div class="h-serv colorOne">
-                <h5>رؤيتنا</h5>
-                <p>{!! $setting->mission !!}</p>
-
-            </div>
-            <div class="backserv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff" fill-opacity="1" d="M0,192L60,170.7C120,149,240,107,360,112C480,117,600,171,720,186.7C840,203,960,181,1080,165.3C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-                    </path>
-                </svg></div>
         </div>
-        <div class="col-md-3">
-            <div class="h-serv colorTwo">
-                <h5>رسالتنا</h5>
-                <p>{!! $setting->vision !!}</p>
-
-            </div>
-            <div class="backserv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff" fill-opacity="1" d="M0,192L60,170.7C120,149,240,107,360,112C480,117,600,171,720,186.7C840,203,960,181,1080,165.3C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-                    </path>
-                </svg></div>
-        </div>
+        <div class="mobile-menu">
 
 
-
-        <div class="col-md-3">
-            <div class="h-serv colorFour">
-                <h5>قيمنا</h5>
-                <p>{!! $setting->initiative !!}</p>
-            </div>
-            <div class="backserv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff" fill-opacity="1" d="M0,192L60,170.7C120,149,240,107,360,112C480,117,600,171,720,186.7C840,203,960,181,1080,165.3C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-                    </path>
-                </svg></div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="h-serv colorThree">
-                <h5>أهدافنا</h5>
-                <p>{!! $setting->values !!}</p>
-
-            </div>
-            <div class="backserv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff" fill-opacity="1" d="M0,192L60,170.7C120,149,240,107,360,112C480,117,600,171,720,186.7C840,203,960,181,1080,165.3C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-                    </path>
-                </svg></div>
-        </div>
-
-    </div>
-</div>
-
-<!--==================================================-->
-<!-- Start  about Section -->
-<!--==================================================-->
-<div class="about-section">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-6  pl-4">
-                <div class="charina-section-title">
-                    <h4> عن الجمعية </h4>
-
-                    <h1 class="section-text"> عيون <span>جــــــدة</span> </h1>
-
-                    {!! $setting->short_descrption !!}
-
-                </div>
-
-                <!-- charina check list -->
-                <div class="charina-check-list">
-
-                    <p class="charina-icon"> <i class="bi bi-check-circle-fill"></i> أهم مبادرات الجمعية </p>
-                    <p> {{ $setting->about_description }}</p>
-                </div>
-                <!-- charina button -->
-                <div class="charina-button">
-                    <a href="{{ route('frontend.about') }}"> المزيد <i class="bi bi-chevron-double-right"></i> </a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <!-- about thumb -->
-
-                @if ($setting->about_photo)
-                <div class="about-thumb">
-                    <img src="{{ $setting->about_photo->getUrl() }}" alt="" class="img-fluid">
-                </div>
-                @endif
-            </div>
-            <!-- about shape -->
-
+            <nav class="charina_menu">
+                <ul class="nav_scroll">
+                    <li>
+                        <a href="#"> من نحن<span><i class="bi bi-chevron-down"></i></span></a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ route('frontend.about') }}">من نحن </a></li>
+                            <li><a href="{{ route('frontend.members') }}">الجمعية العمومية</a></li>
+                            <li><a href="{{ route('frontend.chairman') }}">كلمة رئيس مجلس الإدارة</a></li>
+                            <li><a href="{{ route('frontend.directors') }}">مجلس الإدارة</a></li>
+                            <li><a href="{{ route('frontend.organizational_chart') }}">الهيكل التنظيمي</a></li>
+                            <li><a href="{{ route('frontend.brochure') }}">الكتيب التعريفي</a></li>
+                            <li><a href="{{ route('frontend.team') }}">فريق العمل وبيانات التواصل مع المدير التنفيذي</a></li>
+                            <li><a href="{{ route('frontend.scope') }}">نطاق الجمعية </a></li>
+                            <li><a href="{{ route('frontend.certificates') }}">الشهادات </a></li>
+                            <li><a href="{{ route('frontend.support') }}"> لماذا تدعمنا؟ </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">الحوكمة <span><i class="bi bi-chevron-down"></i></span></a>
+                        <ul class="sub-menu">
+                            @foreach ($hawkma_categories as $category)
+                            <li>
+                                <a href="{{ route('frontend.hawkma', $category) }}"><span>
+                                        {{ $category->name }}</span></a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">التقارير <span><i class="bi bi-chevron-down"></i></span></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="{{ route('frontend.reports', 'yearly') }}"><span> تقارير سنوية
+                                    </span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ route('frontend.partners') }}">شركاؤنا</a></li>
+                    <li>
+                        <a href="#">المركز الاعلامي <span><i class="bi bi-chevron-down"></i></span></a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ route('frontend.news') }}">الأخبار</a></li>
+                            <li><a href="{{ route('frontend.articles') }}">المقالات</a></li>
+                            <li><a href="{{ route('frontend.videos.index') }}">مكتبة الفيديو</a></li>
+                            <li><a href="{{ route('frontend.media') }}">الصور</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ route('frontend.projects') }}"> برامجنا </a></li>
+                    <li>
+                        <a href="#">قياس رضا الجمهور <span><i class="bi bi-chevron-down"></i></span></a>
+                        <ul class="sub-menu">
+                            @foreach ($audience_satisfactions as $satisfaction)
+                            <li>
+                                <a href="{{ route('frontend.audience-satisfaction', $satisfaction->id) }}">
+                                    {{ $satisfaction->title }}
+                                </a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li><a href="https://n9.cl/j8xas"> دراسة احتياجات المستفيدين </a></li>
+                    <li>
+                        <a href="#"> العضويات <span><i class="bi bi-chevron-down"></i></span></a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ route('frontend.membership_types') }}">انواع العضويات</a></li>
+                            <li><a href="{{ route('frontend.membership_guides') }}">دليل التسجيل في العضوية</a></li>
+                            <li><a href="{{ route('frontend.membership') }}"> تسجيل العضوية</a></li>
+                            <li><a href="{{ route('frontend.members') }}">الجمعية العمومية</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">الاستفسارات والشكاوي <span><i class="bi bi-chevron-down"></i></span></a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ route('frontend.contact') }}">إرسال استفسار</a></li>
+                            <li><a href="{{ route('frontend.response-log') }}">سجل الرد على الاستفسارات والشكاوي</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
-</div>
-<!--==================================================-->
-<!-- End  about Secton -->
-<!--==================================================-->
-<!--==================================================-->
+    <!--==================================================-->
+    <!-- End Main Menu Area -->
+    @yield('content')
 
-<!-- Start  donate section  -->
-<!--==================================================-->
 
-<div class="donate-section page-two bg-grey" style="background-image: url(assets/images/daonation_bg.png); background-repeat:no-repeat; ">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <img src="{{ asset('frontend/assets/images/logoIcon.png') }}" width="50">
-                <div class="charina-section-title text-center pb-50">
-                    <h1 class="section-text"> مبــادراتــنا </h1>
+
+    <!-- Start  Footer Section -->
+    <!--==================================================-->
+
+    <div class="footer-section">
+        <div class="container">
+            <div class="row footer-bg">
+                <div class="col-lg-3 col-md-6">
+                    <div class="widgets-company-info">
+                        <!-- charina logo -->
+                        <div class="charina-logo">
+                            <a class="logo_img" href="{{ route('frontend.home') }}" title="">
+                                <img src="{{ asset('frontend/assets/images/logo-footer.png') }}" alt="" />
+                            </a>
+                        </div>
+
+
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            @foreach ($projects as $project)
-            <div class="col-lg-4 col-md-6">
-                <div class="charina-donate-single-box">
-                    <!-- donate thumb -->
-                    <div class="donate-thumb">
-                        <img src="{{ $project->image->getUrl() }}" alt="">
-                        <!-- thumb text -->
-                        <div class="thumb-category">
-                            <span> {{ $project->beneficiar->title ?? 'عامة' }}</span>
+                <div class="col-lg-6 col-md-6">
+                    <div class="widget-nav-menu">
+                        <!-- widget title -->
+                        <h4 class="widget-title">روابط سريعة </h4>
+                        <div class="menu-quick-link-content">
+                            <ul class="footer-widget-list">
+                                <li><a href="{{ route('frontend.contact') }}"> <i class="bi bi-chevron-double-left"></i>الاستفسارات والشكاوي</a></li>
+                                <li><a href="{{ route('frontend.response-log') }}"> <i class="bi bi-chevron-double-left"></i>سجل الرد على الاستفسارات والشكاوي</a></li>
+                                <li><a href="{{ route('frontend.directors') }}"><i class="bi bi-chevron-double-left"></i>مجلس الإدارة</a></li>
+                                <li><a href="{{ $setting->donation_url }}"> <i class="bi bi-chevron-double-left"></i>
+                                        تبرع معنا </a></li>
+                                <li><a href="{{ route('frontend.membership') }}"> <i class="bi bi-chevron-double-left"></i> سجل عضويتك </a></li>
+                                <li><a href="{{ route('frontend.news') }}"> <i class="bi bi-chevron-double-left"></i>الأخبار</a></li>
+                                <li><a href="{{ route('frontend.articles') }}"><i class="bi bi-chevron-double-left"></i>المقالات</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <!-- donate content -->
-                    <div class="charina-donate-content">
-                                                      <div class="donate-title">
-                                    <h3><a href="{{ route('frontend.project', $project->id) }}">{{ $project->title }}</a>
-                                    </h3>
-                                </div>
+                </div>
+                <div class="col-lg-3 col-md-6 pl-20">
+                    <div class="widget-contact-info">
+                        <!-- widget title -->
+                        <h4 class="widget-title">تواصل معنا </h4>
+                        <!-- widget content -->
+                        <div class="footer-widget-content">
+                            <!-- wedget title -->
+                            <!-- footer info desc -->
+                            <div class="footer-info-desc">
+                                <div class="icon"><i class="fa-solid fa-mobile"></i></div>
+                                <p> {{ $setting->phone }} </p>
 
-                        <!-- progress ber -->
-                        {{-- <div class="progress-ber-plugin">
-                                <div id="bar1" class="barfiller">
-                                    <div class="tipWrap">
-                                        <span class="tip"></span>
-                                    </div>
-                                    <span class="fill" data-percentage="60.1"></span>
-                                </div>
-                                <div class="progress-text">
-                                    <p>تحقق : <span>ر.س 50,000</span> </p>
-                                    <p class="progress-text"> الهدف : <span>ر.س 50,000</span></p>
-                                </div>
+                            </div>
+
+                            <!-- footer info desc -->
+                            <div class="footer-info-desc">
+                                <div class="icon"><i class="fa-solid fa-map"></i></div>
+                                <p> {{ $setting->address }}</p>
+
+                            </div>
+
+
+                            <!-- footer info desc -->
+                            <div class="footer-info-desc">
+                                <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                                <p> {{ $setting->email }}</p>
+
+                            </div>
+
+                            <!-- footer info desc -->
+                            {{-- <div class="footer-info-desc">
+                                <div class="icon"><i class="fa-solid fa-globe"></i></div>
+                                <p> www.oyoonjeddah.org.sa </p>
+
                             </div> --}}
-                        <!-- progress ber end -->
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</div>
 
-<!--==================================================-->
-<!-- End  donate Secton -->
-<!--==================================================-->
-<!--==================================================-->
-<!-- End  events section -->
-<!--==================================================-->
-
-<div class="manager-home colorTwo">
-
-    @if ($setting->chairman_image)
-    <div class="img-manager">
-        <img src="{{ $setting->chairman_image->getUrl() }}" />
-    </div>
-    @endif
-
-    <div class="manager-text">
-        {!! $setting->chairman_description !!}
-    </div>
-
-
-</div>
-
-
-<!--==================================================-->
-
-<!-- Start  Blog Section -->
-<!--==================================================-->
-<div class="blog-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <img src="{{asset('frontend/assets/images/logoIcon.png')}}" width="50" />
-                <div class="charina-section-title text-center pb-50">
-
-                    <h4> أخبار عيون جدة </h4>
-
-                    <h1 class="section-text"> أحدث الاخبار & <span>والمقالات</span> </h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            @foreach ($news as $new)
-            <div class="col-12 col-lg-3 col-md-6">
-                <div class="blog-single-box2">
-                    <!-- donations thumb -->
-                    <div class="donations-thumb">
-                        <img src="{{$new->image?->getUrl()}}" alt="">
-
-                    </div>
-                    <div class="blogs-content">
-                        <!-- blog text -->
-                        <div class="blog-text2">
-                            <p> <span class="blog-rt"><i class="bi bi-calendar2-check"></i>{{$new->custom_date}}</span></p>
-                        </div>
-                        <!-- blog title -->
-                        <div class="blog-title2">
-                            <h3><a href="{{route('frontend.new',$new->id)}}">{{$new->name}}</a></h3>
-                        </div>
-
-
-                        <div class="charina-button a">
-                            <a href="{{route('frontend.new',$new->id)}}">المزيد <i class="bi bi-chevron-double-left"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-<!--==================================================-->
-<!-- Start  Blog Section -->
-<!--==================================================-->
-<!--==================================================-->
-<!-- Start  Brand Section -->
-<!--==================================================-->
-<div class="brand-section bg-grey" style="direction:ltr;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
 
-                <div class="charina-section-title text-center pb-20">
-
-                    <h1> شركــاؤنا </h1>
-
+                <!-- foter shape -->
+                <div class="footer-shape bounce-animate">
+                    <img src="{{ asset('frontend/assets/images/resource/footer-arrow.png') }}" alt="">
+                </div>
+                <div class="footer-shape2 dance">
+                    <img src="{{ asset('frontend/assets/images/resource/heart-icon.png') }}" alt="">
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="brand-list owl-carousel">
-                @foreach ($clients as $client)
-
-                <div class="col-lg-12">
-                    <div class="single-brand-thumb">
-                        <img src="{{$client->image->getUrl()}}" alt="">
+    </div>
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer-bottom-content-copy">
+                        <p> جيمع الحقوق محفوظة جمعية عيون جدة © بواسطة تكامل الرؤى </p>
                     </div>
                 </div>
-                @endforeach
+                <div class="col-md-6">
+                    <div class="header_top_menu_icon text-left">
+                        <nav class="social-links" aria-label="">
+                            <ul class="social-list" dir="rtl">
+
+                                 @if($setting->facebook)
+                                 <li><a href="{{ $setting->facebook }}" target="_blank" rel="" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->instagram)
+                                 <li><a href="{{ $setting->instagram }}" target="_blank" rel="" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->twitter)
+                                 <li><a href="{{ $setting->twitter }}" target="_blank" rel="" aria-label="Twitter / X"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->snap_chat)
+                                 <li><a href="{{ $setting->snap_chat }}" target="_blank" rel="" aria-label="Snapchat"><i class="fab fa-snapchat-ghost" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->tiktok)
+                                 <li><a href="{{ $setting->tiktok }}" target="_blank" rel="" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->youtube)
+                                 <li><a href="{{ $setting->youtube }}" target="_blank" rel="" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if($setting->linkedin)
+                                 <li><a href="{{ $setting->linkedin }}" target="_blank" rel="" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                                @endif
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-</div>
-<!--==================================================-->
-<!-- End  Brand Secton -->
-<!--==================================================-->
-<!--==================================================-->
 
-@endsection
+    @include('sweetalert::alert')
+    <!--==================================================-->
+    <!-- End  Footer Section -->
+    <!--==================================================-->
+    <!--==================================================-->
+    <!-- Start scrollup section Section -->
+    <!--==================================================-->
+    <div class="prgoress_indicator active-progress">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 270.456;">
+            </path>
+        </svg>
+    </div>
+    <!--==================================================-->
+    <!-- Start scrollup section Section -->
+    <!--==================================================-->
+    <!--==================================================-->
+    <!-- Start Search Popup Area -->
+    <!--==================================================-->
+    <div class="search-popup">
+        <button class="close-search style-two"><span class="flaticon-multiply"><i class="far fa-times-circle"></i></span></button>
+        <button class="close-search"><i class="fas fa-arrow-up"></i></button>
+        <form method="post" action="#">
+            <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+    <!--==================================================-->
+    <!-- Start Search Popup Area -->
+    <!--==================================================-->
+    <!-- jquery js --
+ <script src="{{ asset('frontend/assets/js/vendor/jquery-3.2.1.min.js') }}"></script>
+ <!-- bootstrap js -->
+    <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
+    <!-- carousel js -->
+    <script src="{{ asset('frontend/assets/js/owl.carousel.min.js') }}"></script>
+    <!-- counterup js -->
+    <script src="{{ asset('frontend/assets/js/jquery.counterup.min.js') }}"></script>
+    <!-- waypoints js -->
+    <script src="{{ asset('frontend/assets/js/waypoints.min.js') }}"></script>
+    <!-- wow js -->
+    <script src="{{ asset('frontend/assets/js/wow.js') }}"></script>
+    <!-- imagesloaded js -->
+    <script src="{{ asset('frontend/assets/js/imagesloaded.pkgd.min.js') }}"></script>
+    <!-- venobox js -->
+    <script src="{{ asset('frontend/venobox/venobox.js') }}"></script>
+    <!-- ajax mail js -->
+    <script src="{{ asset('frontend/assets/js/ajax-mail.js') }}"></script>
+    <!--  animated-text js -->
+    <script src="{{ asset('frontend/assets/js/animated-text.js') }}"></script>
+    <!-- venobox min js -->
+    <script src="{{ asset('frontend/venobox/venobox.min.js') }}"></script>
+    <!-- isotope js -->
+    <script src="{{ asset('frontend/assets/js/isotope.pkgd.min.js') }}"></script>
+    <!-- jquery meanmenu js -->
+    <script src="{{ asset('frontend/assets/js/jquery.meanmenu.js') }}"></script>
+    <!-- jquery scrollup js -->
+    <script src="{{ asset('frontend/assets/js/jquery.scrollUp.js') }}"></script>
+    <!-- barfiller js -->
+    <script src="{{ asset('frontend/assets/js/jquery.barfiller.js') }}"></script>
+    <!-- theme js -->
+    <script src="{{ asset('frontend/assets/js/theme.js') }}"></script>
+
+    <!----slider---->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o)
+                , m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-3415878-12', 'dandywebsolution.com');
+        ga('send', 'pageview');
+
+    </script>
+    <!----slider---->
+    @yield('scripts')
+</body>
+
+</html>

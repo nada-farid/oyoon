@@ -31,6 +31,7 @@ class Setting extends Model implements HasMedia
         'about_inner_photo',
         'organizational_chart',
         'brochure',
+        'response_log',
     ];
 
     protected $fillable = [
@@ -45,6 +46,10 @@ class Setting extends Model implements HasMedia
         'instagram',
         'snap_chat',
         'pinterest',
+        'map_url',
+        'tiktok',
+        'youtube',
+        'form_url',
         'short_descrption',
         'description',
         'about_description',
@@ -71,6 +76,7 @@ class Setting extends Model implements HasMedia
         'counter_5_value',
         'counter_6_text',
         'counter_6_value',
+        'whatsapp_url',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -186,6 +192,18 @@ class Setting extends Model implements HasMedia
     public function getBrochureAttribute()
     {
         $file = $this->getMedia('brochure')->last();
+        if ($file) {
+            $file->url       = $file->getUrl();
+            $file->thumbnail = $file->getUrl('thumb');
+            $file->preview   = $file->getUrl('preview');
+        }
+
+        return $file;
+    }
+
+    public function getResponseLogAttribute()
+    {
+        $file = $this->getMedia('response_log')->last();
         if ($file) {
             $file->url       = $file->getUrl();
             $file->thumbnail = $file->getUrl('thumb');

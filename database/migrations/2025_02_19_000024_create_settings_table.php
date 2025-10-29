@@ -41,6 +41,11 @@ class CreateSettingsTable extends Migration
             $table->longText('vision')->nullable();
             $table->longText('mission')->nullable();
             $table->longText('values')->nullable();
+            $table->string('map_url')->nullable();
+            $table->string('tiktok')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('form_url')->nullable();
+            $table->string('whatsapp_url')->nullable();
             $table->longText('initiative')->nullable();
             $table->longText('support_text')->nullable();
             $table->longText('membership_conditions')->nullable();

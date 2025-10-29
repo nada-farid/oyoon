@@ -136,7 +136,7 @@
                                             <div class="counter-content">
                                                 <div class="counter-title">
                                                     <h1 class="counter">{{ $setting->$counter }}</h1>
-                                                    <h1 class="counter-title2">M</h1>
+                                                    <h1 class="counter-title2">+</h1>
                                                 </div>
                                             </div>
                                         </div>

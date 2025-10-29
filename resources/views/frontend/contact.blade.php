@@ -151,9 +151,11 @@
         <div class="container">
             <div class="row map-bg">
                 <div class="col-lg-12">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.6194043224186!2d89.61168491495718!3d25.650754283687256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fd33c03fbe69cb%3A0x273671e159f8b39e!2sRDRS%20Ulipur!5e0!3m2!1sen!2sbd!4v1636872467628!5m2!1sen!2sbd"
+                    @if($setting->map_url)
+                      <iframe
+                        src="{{ $setting->map_url }}"
                         width="1140" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    @endif
                 </div>
             </div>
         </div>

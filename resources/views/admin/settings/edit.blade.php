@@ -83,66 +83,6 @@
                         <span class="help-block">{{ trans('cruds.setting.fields.email_helper') }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="facebook">{{ trans('cruds.setting.fields.facebook') }}</label>
-                        <input class="form-control {{ $errors->has('facebook') ? 'is-invalid' : '' }}" type="text" name="facebook" id="facebook" value="{{ old('facebook', $setting->facebook) }}">
-                        @if ($errors->has('facebook'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('facebook') }}
-                        </div>
-                        @endif
-                        <span class="help-block">{{ trans('cruds.setting.fields.facebook_helper') }}</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="twitter">{{ trans('cruds.setting.fields.twitter') }}</label>
-                        <input class="form-control {{ $errors->has('twitter') ? 'is-invalid' : '' }}" type="text" name="twitter" id="twitter" value="{{ old('twitter', $setting->twitter) }}">
-                        @if ($errors->has('twitter'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('twitter') }}
-                        </div>
-                        @endif
-                        <span class="help-block">{{ trans('cruds.setting.fields.twitter_helper') }}</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="linkedin">{{ trans('cruds.setting.fields.linkedin') }}</label>
-                        <input class="form-control {{ $errors->has('linkedin') ? 'is-invalid' : '' }}" type="text" name="linkedin" id="linkedin" value="{{ old('linkedin', $setting->linkedin) }}">
-                        @if ($errors->has('linkedin'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('linkedin') }}
-                        </div>
-                        @endif
-                        <span class="help-block">{{ trans('cruds.setting.fields.linkedin_helper') }}</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="youtubte">{{ trans('cruds.setting.fields.youtubte') }}</label>
-                        <input class="form-control {{ $errors->has('youtubte') ? 'is-invalid' : '' }}" type="text" name="youtubte" id="youtubte" value="{{ old('youtubte', $setting->youtubte) }}">
-                        @if ($errors->has('youtubte'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('youtubte') }}
-                        </div>
-                        @endif
-                        <span class="help-block">{{ trans('cruds.setting.fields.youtubte_helper') }}</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="instagram">{{ trans('cruds.setting.fields.instagram') }}</label>
-                        <input class="form-control {{ $errors->has('instagram') ? 'is-invalid' : '' }}" type="text" name="instagram" id="instagram" value="{{ old('instagram', $setting->instagram) }}">
-                        @if ($errors->has('instagram'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('instagram') }}
-                        </div>
-                        @endif
-                        <span class="help-block">{{ trans('cruds.setting.fields.instagram_helper') }}</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="snap_chat">{{ trans('cruds.setting.fields.snap_chat') }}</label>
-                        <input class="form-control {{ $errors->has('snap_chat') ? 'is-invalid' : '' }}" type="text" name="snap_chat" id="snap_chat" value="{{ old('snap_chat', $setting->snap_chat) }}">
-                        @if ($errors->has('snap_chat'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('snap_chat') }}
-                        </div>
-                        @endif
-                        <span class="help-block">{{ trans('cruds.setting.fields.snap_chat_helper') }}</span>
-                    </div>
-                    <div class="form-group">
                         <label for="donation_url">{{ trans('cruds.setting.fields.donation_url') }}</label>
                         <input class="form-control {{ $errors->has('donation_url') ? 'is-invalid' : '' }}" type="text" name="donation_url" id="donation_url" value="{{ old('donation_url', $setting->donation_url) }}">
                         @if ($errors->has('donation_url'))
@@ -151,6 +91,26 @@
                         </div>
                         @endif
                         <span class="help-block">{{ trans('cruds.setting.fields.donation_url_helper') }}</span>
+                    </div>
+                                        <div class="form-group">
+                        <label for="map_url">{{ trans('cruds.setting.fields.map_url') }}</label>
+                        <input class="form-control {{ $errors->has('map_url') ? 'is-invalid' : '' }}" type="text" name="map_url" id="map_url" value="{{ old('map_url', $setting->map_url) }}">
+                        @if ($errors->has('map_url'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('map_url') }}
+                        </div>
+                        @endif
+                        <span class="help-block">{{ trans('cruds.setting.fields.map_url_helper') }}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_url">{{ trans('cruds.setting.fields.form_url') }}</label>
+                        <input class="form-control {{ $errors->has('form_url') ? 'is-invalid' : '' }}" type="text" name="form_url" id="form_url" value="{{ old('form_url', $setting->form_url) }}">
+                        @if ($errors->has('form_url'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('form_url') }}
+                        </div>
+                        @endif
+                        <span class="help-block">{{ trans('cruds.setting.fields.form_url_helper') }}</span>
                     </div>
                 </div>
 
@@ -321,16 +281,6 @@
                         <span class="help-block">{{ trans('cruds.setting.fields.linkedin_helper') }}</span>
                     </div>
                     <div class="form-group">
-                        <label for="youtubte">{{ trans('cruds.setting.fields.youtubte') }}</label>
-                        <input class="form-control {{ $errors->has('youtubte') ? 'is-invalid' : '' }}" type="text" name="youtubte" id="youtubte" value="{{ old('youtubte', $setting->youtubte) }}">
-                        @if ($errors->has('youtubte'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('youtubte') }}
-                        </div>
-                        @endif
-                        <span class="help-block">{{ trans('cruds.setting.fields.youtubte_helper') }}</span>
-                    </div>
-                    <div class="form-group">
                         <label for="instagram">{{ trans('cruds.setting.fields.instagram') }}</label>
                         <input class="form-control {{ $errors->has('instagram') ? 'is-invalid' : '' }}" type="text" name="instagram" id="instagram" value="{{ old('instagram', $setting->instagram) }}">
                         @if ($errors->has('instagram'))
@@ -351,6 +301,36 @@
                         <span class="help-block">{{ trans('cruds.setting.fields.snap_chat_helper') }}</span>
                     </div>
                     <div class="form-group">
+                        <label for="tiktok">{{ trans('cruds.setting.fields.tiktok') }}</label>
+                        <input class="form-control {{ $errors->has('tiktok') ? 'is-invalid' : '' }}" type="text" name="tiktok" id="tiktok" value="{{ old('tiktok', $setting->tiktok) }}">
+                        @if ($errors->has('tiktok'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('tiktok') }}
+                        </div>
+                        @endif
+                        <span class="help-block">{{ trans('cruds.setting.fields.tiktok_helper') }}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="youtube">{{ trans('cruds.setting.fields.youtube') }}</label>
+                        <input class="form-control {{ $errors->has('youtube') ? 'is-invalid' : '' }}" type="text" name="youtube" id="youtube" value="{{ old('youtube', $setting->youtube) }}">
+                        @if ($errors->has('youtube'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('youtube') }}
+                        </div>
+                        @endif
+                        <span class="help-block">{{ trans('cruds.setting.fields.youtube_helper') }}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp_url">{{ trans('cruds.setting.fields.whatsapp_url') }}</label>
+                        <input class="form-control {{ $errors->has('whatsapp_url') ? 'is-invalid' : '' }}" type="text" name="whatsapp_url" id="whatsapp_url" value="{{ old('whatsapp_url', $setting->whatsapp_url) }}">
+                        @if ($errors->has('whatsapp_url'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('whatsapp_url') }}
+                        </div>
+                        @endif
+                        <span class="help-block">{{ trans('cruds.setting.fields.whatsapp_url_helper') }}</span>
+                    </div>
+                    <div class="form-group">
                         <label for="pinterest">{{ trans('cruds.setting.fields.pinterest') }}</label>
                         <input class="form-control {{ $errors->has('pinterest') ? 'is-invalid' : '' }}" type="text" name="pinterest" id="pinterest" value="{{ old('pinterest', $setting->pinterest) }}">
                         @if ($errors->has('pinterest'))
@@ -361,7 +341,7 @@
                         <span class="help-block">{{ trans('cruds.setting.fields.pinterest_helper') }}</span>
                     </div>
                 </div>
-
+                <!-- Social Media Tab -->
                 <!-- Media Tab -->
                 <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
                     <div class="form-group">
@@ -462,6 +442,17 @@
                         </div>
                         @endif
                         <span class="help-block">يرجى رفع الكتيب التعريفي بصيغة PDF</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="response_log">سجل الرد على الاستفسارات والشكاوي</label>
+                        <div class="needsclick dropzone {{ $errors->has('response_log') ? 'is-invalid' : '' }}" id="responseLogDropzone">
+                        </div>
+                        @if ($errors->has('response_log'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('response_log') }}
+                        </div>
+                        @endif
+                        <span class="help-block">يرجى رفع سجل الرد بصيغة PDF</span>
                     </div>
                 </div>
 
@@ -1219,6 +1210,56 @@
             return _results
         }
     }
-
+</script>
+<script>
+    Dropzone.options.responseLogDropzone = {
+        url: '{{ route('admin.settings.storeMedia') }}',
+        maxFilesize: 15,
+        acceptedFiles: '.pdf',
+        maxFiles: 1,
+        addRemoveLinks: true,
+        headers: {
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+        },
+        params: {
+            size: 15
+        },
+        success: function(file, response) {
+            $('form').find('input[name="response_log"]').remove()
+            $('form').append('<input type="hidden" name="response_log" value="' + response.name + '">')
+        },
+        removedfile: function(file) {
+            file.previewElement.remove()
+            if (file.status !== 'error') {
+                $('form').find('input[name="response_log"]').remove()
+                this.options.maxFiles = this.options.maxFiles + 1
+            }
+        },
+        init: function() {
+            @if(isset($setting) && $setting->response_log)
+            var file = {!! json_encode($setting->response_log) !!}
+            this.options.addedfile.call(this, file)
+            this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
+            file.previewElement.classList.add('dz-complete')
+            $('form').append('<input type="hidden" name="response_log" value="' + file.file_name + '">')
+            this.options.maxFiles = this.options.maxFiles - 1
+            @endif
+        },
+        error: function(file, response) {
+            if ($.type(response) === 'string') {
+                var message = response
+            } else {
+                var message = response.errors.file
+            }
+            file.previewElement.classList.add('dz-error')
+            _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+            _results = []
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                node = _ref[_i]
+                _results.push(node.textContent = message)
+            }
+            return _results
+        }
+    }
 </script>
 @endsection

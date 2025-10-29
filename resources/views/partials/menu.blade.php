@@ -245,6 +245,42 @@
                 </ul>
             </li>
         @endcan
+        @can('audience_satisfaction_access')
+            <li
+                class="c-sidebar-nav-dropdown {{ request()->is('admin/audience-satisfactions*') ? 'c-show' : '' }} {{ request()->is('admin/audience-satisfaction-items*') ? 'c-show' : '' }}">
+                <a class="c-sidebar-nav-dropdown-toggle" href="#">
+                    <i class="fa-fw fas fa-chart-line c-sidebar-nav-icon">
+
+                    </i>
+                    قياس رضا الجمهور
+                </a>
+                <ul class="c-sidebar-nav-dropdown-items">
+                    @can('audience_satisfaction_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route('admin.audience-satisfactions.index') }}"
+                                class="c-sidebar-nav-link {{ request()->is('admin/audience-satisfactions') || request()->is('admin/audience-satisfactions/*') ? 'c-active' : '' }}">
+                                <i class="fa-fw fas fa-list c-sidebar-nav-icon">
+
+                                </i>
+                                قياس رضا الجمهور
+                            </a>
+                        </li>
+                    @endcan
+                    @can('audience_satisfaction_item_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route('admin.audience-satisfaction-items.index') }}"
+                                class="c-sidebar-nav-link {{ request()->is('admin/audience-satisfaction-items') || request()->is('admin/audience-satisfaction-items/*') ? 'c-active' : '' }}">
+                                <i class="fa-fw fas fa-file-alt c-sidebar-nav-icon">
+
+                                </i>
+                                عناصر قياس رضا الجمهور
+                            </a>
+                        </li>
+                    @endcan
+
+                </ul>
+            </li>
+        @endcan
         @can('report_mangment_access')
             <li
                 class="c-sidebar-nav-dropdown {{ request()->is('admin/report-categories*') ? 'c-show' : '' }} {{ request()->is('admin/reports*') ? 'c-show' : '' }} {{ request()->is('admin/report-moneys*') ? 'c-show' : '' }}">

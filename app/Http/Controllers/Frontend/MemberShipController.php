@@ -33,7 +33,11 @@ class MemberShipController extends Controller
 
     public function store(StoreMemberRequest $request)
     {
-        $member = Member::create($request->all());
+        // Set is_active to false by default for frontend registrations
+        $data = $request->all();
+        $data['is_active'] = false;
+        
+        $member = Member::create($data);
 
         // Handle photo upload
         if ($request->hasFile('photo')) {
@@ -48,7 +52,7 @@ class MemberShipController extends Controller
 
     public function members()
     {
-        $members = Member::with('type')->get();
+        $members = Member::with('type')->active()->get();
         return view('frontend.members', compact('members'));
     }
 }

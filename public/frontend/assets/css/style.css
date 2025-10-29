@@ -57,6 +57,8 @@ body {direction:rtl; text-align:right;}
     padding-top: 5px;
     border-bottom: solid thin #EEEEEE;
     background: #EEEEEE;
+    position: relative;
+    z-index: 10;
 }
 .header-links ul {
     
@@ -676,7 +678,6 @@ nav.charina_menu > ul > li > a:hover span {
     border: 1px solid #d1d1d1;
     padding: 20px;
     background: #fff;
-    filter: grayscale(100%);
 }
 /*<!-- Start style two hero Section -->*/
 .hero2 {
@@ -6059,3 +6060,28 @@ nav.charina_menu > ul > li > a:hover span {
 .guide ul {
     margin-right: 30px;
 }
+
+.code-icon {
+    position: fixed;
+    bottom:20px;
+    left: 40px;
+    z-index: 1000;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: white;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.code-icon:hover {
+        background-color: #0d3d56;
+        transform: scale(1.05);
+    }

@@ -121,6 +121,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Members
     Route::delete('members/destroy', 'MembersController@massDestroy')->name('members.massDestroy');
+    Route::post('members/{member}/toggle-active', 'MembersController@toggleActive')->name('members.toggleActive');
     Route::resource('members', 'MembersController');
 
     // Contacts
@@ -178,6 +179,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('videos/media', 'VideoController@storeMedia')->name('videos.storeMedia');
     Route::post('videos/ckmedia', 'VideoController@storeCKEditorImages')->name('videos.storeCKEditorImages');
     Route::resource('videos', 'VideoController');
+
+    // Audience Satisfactions
+    Route::delete('audience-satisfactions/destroy', 'AudienceSatisfactionController@massDestroy')->name('audience-satisfactions.massDestroy');
+    Route::resource('audience-satisfactions', 'AudienceSatisfactionController');
+
+    // Audience Satisfaction Items
+    Route::delete('audience-satisfaction-items/destroy', 'AudienceSatisfactionItemController@massDestroy')->name('audience-satisfaction-items.massDestroy');
+    Route::post('audience-satisfaction-items/media', 'AudienceSatisfactionItemController@storeMedia')->name('audience-satisfaction-items.storeMedia');
+    Route::post('audience-satisfaction-items/ckmedia', 'AudienceSatisfactionItemController@storeCKEditorImages')->name('audience-satisfaction-items.storeCKEditorImages');
+    Route::resource('audience-satisfaction-items', 'AudienceSatisfactionItemController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
